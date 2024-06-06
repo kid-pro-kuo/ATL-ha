@@ -1,0 +1,2056 @@
+2024-06-06 16:02:11.569 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2024-06-06 16:03:13.454 WARNING (MainThread) [homeassistant.data_entry_flow] custom_components.hacs.config_flow::HacsFlowHandler calls async_show_progress without passing a progress task, this is not valid and will break in Home Assistant Core 2024.8. Please report it to the custom integration author
+2024-06-06 16:03:43.933 WARNING (MainThread) [homeassistant.helpers.frame] Detected that custom integration 'hacs' accesses hass.components.frontend. This is deprecated and will stop working in Home Assistant 2024.9, it should be updated to import functions used from frontend directly at custom_components/hacs/frontend.py, line 68: hass.components.frontend.async_register_built_in_panel(, please create a bug report at https://github.com/hacs/integration/issues
+2024-06-06 16:03:43.952 WARNING (MainThread) [homeassistant.helpers.frame] Detected that custom integration 'hacs' accesses hass.helpers.event. This is deprecated and will stop working in Home Assistant 2024.11, it should be updated to import functions used from event directly at custom_components/hacs/base.py, line 642: self.hass.helpers.event.async_track_time_interval(, please create a bug report at https://github.com/hacs/integration/issues
+2024-06-06 16:08:47.577 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 600: zip_file.extractall(self.content.path.local) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 975, in async_install_repository
+    await self.download_zip_files(self.validate)
+  File "/config/custom_components/hacs/repositories/base.py", line 566, in download_zip_files
+    await self.async_download_zip_file(
+  File "/config/custom_components/hacs/repositories/base.py", line 600, in async_download_zip_file
+    zip_file.extractall(self.content.path.local)
+
+2024-06-06 16:08:47.583 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 600: zip_file.extractall(self.content.path.local) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 975, in async_install_repository
+    await self.download_zip_files(self.validate)
+  File "/config/custom_components/hacs/repositories/base.py", line 566, in download_zip_files
+    await self.async_download_zip_file(
+  File "/config/custom_components/hacs/repositories/base.py", line 600, in async_download_zip_file
+    zip_file.extractall(self.content.path.local)
+
+2024-06-06 16:08:47.587 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 600: zip_file.extractall(self.content.path.local) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 975, in async_install_repository
+    await self.download_zip_files(self.validate)
+  File "/config/custom_components/hacs/repositories/base.py", line 566, in download_zip_files
+    await self.async_download_zip_file(
+  File "/config/custom_components/hacs/repositories/base.py", line 600, in async_download_zip_file
+    zip_file.extractall(self.content.path.local)
+
+2024-06-06 16:08:47.592 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 600: zip_file.extractall(self.content.path.local) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 975, in async_install_repository
+    await self.download_zip_files(self.validate)
+  File "/config/custom_components/hacs/repositories/base.py", line 566, in download_zip_files
+    await self.async_download_zip_file(
+  File "/config/custom_components/hacs/repositories/base.py", line 600, in async_download_zip_file
+    zip_file.extractall(self.content.path.local)
+
+2024-06-06 16:08:47.597 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 600: zip_file.extractall(self.content.path.local) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 975, in async_install_repository
+    await self.download_zip_files(self.validate)
+  File "/config/custom_components/hacs/repositories/base.py", line 566, in download_zip_files
+    await self.async_download_zip_file(
+  File "/config/custom_components/hacs/repositories/base.py", line 600, in async_download_zip_file
+    zip_file.extractall(self.content.path.local)
+
+2024-06-06 16:08:47.601 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 600: zip_file.extractall(self.content.path.local) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 975, in async_install_repository
+    await self.download_zip_files(self.validate)
+  File "/config/custom_components/hacs/repositories/base.py", line 566, in download_zip_files
+    await self.async_download_zip_file(
+  File "/config/custom_components/hacs/repositories/base.py", line 600, in async_download_zip_file
+    zip_file.extractall(self.content.path.local)
+
+2024-06-06 16:08:47.605 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 600: zip_file.extractall(self.content.path.local) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 975, in async_install_repository
+    await self.download_zip_files(self.validate)
+  File "/config/custom_components/hacs/repositories/base.py", line 566, in download_zip_files
+    await self.async_download_zip_file(
+  File "/config/custom_components/hacs/repositories/base.py", line 600, in async_download_zip_file
+    zip_file.extractall(self.content.path.local)
+
+2024-06-06 16:08:47.610 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 600: zip_file.extractall(self.content.path.local) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 975, in async_install_repository
+    await self.download_zip_files(self.validate)
+  File "/config/custom_components/hacs/repositories/base.py", line 566, in download_zip_files
+    await self.async_download_zip_file(
+  File "/config/custom_components/hacs/repositories/base.py", line 600, in async_download_zip_file
+    zip_file.extractall(self.content.path.local)
+
+2024-06-06 16:08:47.615 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 600: zip_file.extractall(self.content.path.local) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 975, in async_install_repository
+    await self.download_zip_files(self.validate)
+  File "/config/custom_components/hacs/repositories/base.py", line 566, in download_zip_files
+    await self.async_download_zip_file(
+  File "/config/custom_components/hacs/repositories/base.py", line 600, in async_download_zip_file
+    zip_file.extractall(self.content.path.local)
+
+2024-06-06 16:08:47.620 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 600: zip_file.extractall(self.content.path.local) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 975, in async_install_repository
+    await self.download_zip_files(self.validate)
+  File "/config/custom_components/hacs/repositories/base.py", line 566, in download_zip_files
+    await self.async_download_zip_file(
+  File "/config/custom_components/hacs/repositories/base.py", line 600, in async_download_zip_file
+    zip_file.extractall(self.content.path.local)
+
+2024-06-06 16:08:47.625 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 600: zip_file.extractall(self.content.path.local) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 975, in async_install_repository
+    await self.download_zip_files(self.validate)
+  File "/config/custom_components/hacs/repositories/base.py", line 566, in download_zip_files
+    await self.async_download_zip_file(
+  File "/config/custom_components/hacs/repositories/base.py", line 600, in async_download_zip_file
+    zip_file.extractall(self.content.path.local)
+
+2024-06-06 16:08:47.629 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 600: zip_file.extractall(self.content.path.local) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 975, in async_install_repository
+    await self.download_zip_files(self.validate)
+  File "/config/custom_components/hacs/repositories/base.py", line 566, in download_zip_files
+    await self.async_download_zip_file(
+  File "/config/custom_components/hacs/repositories/base.py", line 600, in async_download_zip_file
+    zip_file.extractall(self.content.path.local)
+
+2024-06-06 16:08:47.633 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2024-06-06 16:08:47.633 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration smartrent which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2024-06-06 16:08:58.372 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.377 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.382 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.388 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.392 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.397 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.402 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.407 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.411 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.416 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.420 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.425 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.429 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.434 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.439 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.443 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.447 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.452 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.457 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.461 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.466 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.470 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.475 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.479 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.484 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.488 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.493 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.497 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.502 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.507 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.511 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.516 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.521 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.526 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.530 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.535 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.539 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.544 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.548 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.553 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.557 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.562 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.566 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.571 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.576 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.580 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.585 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.590 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.594 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.599 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.605 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.610 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.616 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.622 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'hacs' at custom_components/hacs/repositories/base.py, line 698: zip_file.extractall(self.content.path.local, extractable) (offender: /usr/local/lib/python3.12/zipfile/__init__.py, line 1790: open(targetpath, "wb") as target:), please create a bug report at https://github.com/hacs/integration/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/decorators.py", line 27, in _handle_async_response
+    await func(hass, connection, msg)
+  File "/config/custom_components/hacs/websocket/repository.py", line 234, in hacs_repository_download
+    await repository.async_install()
+  File "/config/custom_components/hacs/repositories/base.py", line 893, in async_install
+    await self.async_install_repository(version=version)
+  File "/config/custom_components/hacs/repositories/base.py", line 977, in async_install_repository
+    await self.download_content(version_to_install)
+  File "/config/custom_components/hacs/repositories/base.py", line 628, in download_content
+    await self.download_repository_zip()
+  File "/config/custom_components/hacs/repositories/base.py", line 698, in download_repository_zip
+    zip_file.extractall(self.content.path.local, extractable)
+
+2024-06-06 16:08:58.631 WARNING (SyncWorker_10) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2024-06-06 16:08:58.632 WARNING (SyncWorker_10) [homeassistant.loader] We found a custom integration icloud3 which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2024-06-06 16:08:58.632 WARNING (SyncWorker_10) [homeassistant.loader] We found a custom integration smartrent which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2024-06-06 16:09:25.251 WARNING (MainThread) [homeassistant.core] Task <Task pending name='admin service homeassistant.restart' coro=<async_setup.<locals>.async_handle_core_service() running at /usr/src/homeassistant/homeassistant/components/homeassistant/__init__.py:207> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[set.remove(), Task.task_wakeup()]> was still running after final writes shutdown stage; Integrations should cancel non-critical tasks when receiving the stop event to prevent delaying shutdown

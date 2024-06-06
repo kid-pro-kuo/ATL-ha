@@ -1,0 +1,551 @@
+2024-06-06 16:09:32.320 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2024-06-06 16:09:32.321 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration icloud3 which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2024-06-06 16:09:32.322 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration smartrent which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2024-06-06 16:09:35.904 WARNING (MainThread) [homeassistant.helpers.frame] Detected that custom integration 'hacs' accesses hass.components.frontend. This is deprecated and will stop working in Home Assistant 2024.9, it should be updated to import functions used from frontend directly at custom_components/hacs/frontend.py, line 68: hass.components.frontend.async_register_built_in_panel(, please create a bug report at https://github.com/hacs/integration/issues
+2024-06-06 16:09:40.710 WARNING (MainThread) [homeassistant.helpers.frame] Detected that custom integration 'hacs' accesses hass.helpers.event. This is deprecated and will stop working in Home Assistant 2024.11, it should be updated to import functions used from event directly at custom_components/hacs/base.py, line 642: self.hass.helpers.event.async_track_time_interval(, please create a bug report at https://github.com/hacs/integration/issues
+2024-06-06 16:11:00.804 WARNING (MainThread) [homeassistant.helpers.frame] Detected that custom integration 'smartrent' calls `async_add_job`, which is deprecated and will be removed in Home Assistant 2025.4; Please review https://developers.home-assistant.io/blog/2024/03/13/deprecate_add_run_job for replacement options at custom_components/smartrent/__init__.py, line 54: hass.async_add_job(, please create a bug report at https://github.com/ZacheryThomas/homeassistant-smartrent/issues
+2024-06-06 16:11:00.839 WARNING (MainThread) [homeassistant.components.climate] Entity None (<class 'custom_components.smartrent.climate.SmartrentThermostat'>) implements HVACMode(s): heat, cool, off, heat_cool and therefore implicitly supports the turn_on/turn_off methods without setting the proper ClimateEntityFeature. Please create a bug report at https://github.com/ZacheryThomas/homeassistant-smartrent/issues
+2024-06-06 16:15:33.238 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'icloud3' at custom_components/icloud3/support/config_file.py, line 516: with open(filename, 'w', encoding='utf8') as f: (offender: /config/custom_components/icloud3/support/config_file.py, line 516: with open(filename, 'w', encoding='utf8') as f:), please create a bug report at https://github.com/gcobb321/icloud3_v3/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 452, in _handle_request
+    resp = await request_handler(request)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_app.py", line 543, in _handle
+    resp = await handler(request)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_middlewares.py", line 114, in impl
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/security_filter.py", line 92, in security_filter_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/forwarded.py", line 83, in forwarded_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/request_context.py", line 26, in request_context_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/ban.py", line 85, in ban_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/auth.py", line 242, in auth_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/headers.py", line 32, in headers_middleware
+    response = await handler(request)
+  File "/usr/src/homeassistant/homeassistant/helpers/http.py", line 73, in handle
+    result = await handler(request, **request.match_info)
+  File "/usr/src/homeassistant/homeassistant/components/http/decorators.py", line 81, in with_admin
+    return await func(self, request, *args, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/components/http/data_validator.py", line 70, in wrapper
+    return await method(view, request, data, *args, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/components/config/config_entries.py", line 172, in post
+    return await self._post_impl(request, data)
+  File "/usr/src/homeassistant/homeassistant/components/config/config_entries.py", line 179, in _post_impl
+    return await super()._post_impl(request, data)
+  File "/usr/src/homeassistant/homeassistant/helpers/data_entry_flow.py", line 84, in _post_impl
+    result = await self._flow_mgr.async_init(
+  File "/usr/src/homeassistant/homeassistant/config_entries.py", line 1262, in async_init
+    flow, result = await self._async_init(flow_id, handler, context, data)
+  File "/usr/src/homeassistant/homeassistant/config_entries.py", line 1292, in _async_init
+    result = await self._async_handle_step(flow, flow.init_step, data)
+  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 517, in _async_handle_step
+    result: _FlowResultT = await getattr(flow, method)(user_input)
+  File "/config/custom_components/icloud3/config_flow.py", line 573, in async_step_user
+    config_file.load_storage_icloud3_configuration_file()
+  File "/config/custom_components/icloud3/support/config_file.py", line 65, in load_storage_icloud3_configuration_file
+    write_storage_icloud3_configuration_file()
+  File "/config/custom_components/icloud3/support/config_file.py", line 516, in write_storage_icloud3_configuration_file
+    with open(filename, 'w', encoding='utf8') as f:
+
+2024-06-06 16:15:33.245 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'icloud3' at custom_components/icloud3/support/config_file.py, line 123: with open(filename, 'r') as f: (offender: /config/custom_components/icloud3/support/config_file.py, line 123: with open(filename, 'r') as f:), please create a bug report at https://github.com/gcobb321/icloud3_v3/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 452, in _handle_request
+    resp = await request_handler(request)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_app.py", line 543, in _handle
+    resp = await handler(request)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_middlewares.py", line 114, in impl
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/security_filter.py", line 92, in security_filter_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/forwarded.py", line 83, in forwarded_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/request_context.py", line 26, in request_context_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/ban.py", line 85, in ban_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/auth.py", line 242, in auth_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/headers.py", line 32, in headers_middleware
+    response = await handler(request)
+  File "/usr/src/homeassistant/homeassistant/helpers/http.py", line 73, in handle
+    result = await handler(request, **request.match_info)
+  File "/usr/src/homeassistant/homeassistant/components/http/decorators.py", line 81, in with_admin
+    return await func(self, request, *args, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/components/http/data_validator.py", line 70, in wrapper
+    return await method(view, request, data, *args, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/components/config/config_entries.py", line 172, in post
+    return await self._post_impl(request, data)
+  File "/usr/src/homeassistant/homeassistant/components/config/config_entries.py", line 179, in _post_impl
+    return await super()._post_impl(request, data)
+  File "/usr/src/homeassistant/homeassistant/helpers/data_entry_flow.py", line 84, in _post_impl
+    result = await self._flow_mgr.async_init(
+  File "/usr/src/homeassistant/homeassistant/config_entries.py", line 1262, in async_init
+    flow, result = await self._async_init(flow_id, handler, context, data)
+  File "/usr/src/homeassistant/homeassistant/config_entries.py", line 1292, in _async_init
+    result = await self._async_handle_step(flow, flow.init_step, data)
+  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 517, in _async_handle_step
+    result: _FlowResultT = await getattr(flow, method)(user_input)
+  File "/config/custom_components/icloud3/config_flow.py", line 573, in async_step_user
+    config_file.load_storage_icloud3_configuration_file()
+  File "/config/custom_components/icloud3/support/config_file.py", line 67, in load_storage_icloud3_configuration_file
+    success = read_storage_icloud3_configuration_file()
+  File "/config/custom_components/icloud3/support/config_file.py", line 123, in read_storage_icloud3_configuration_file
+    with open(filename, 'r') as f:
+
+2024-06-06 16:15:33.250 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'icloud3' at custom_components/icloud3/support/config_file.py, line 516: with open(filename, 'w', encoding='utf8') as f: (offender: /config/custom_components/icloud3/support/config_file.py, line 516: with open(filename, 'w', encoding='utf8') as f:), please create a bug report at https://github.com/gcobb321/icloud3_v3/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 452, in _handle_request
+    resp = await request_handler(request)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_app.py", line 543, in _handle
+    resp = await handler(request)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_middlewares.py", line 114, in impl
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/security_filter.py", line 92, in security_filter_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/forwarded.py", line 83, in forwarded_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/request_context.py", line 26, in request_context_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/ban.py", line 85, in ban_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/auth.py", line 242, in auth_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/headers.py", line 32, in headers_middleware
+    response = await handler(request)
+  File "/usr/src/homeassistant/homeassistant/helpers/http.py", line 73, in handle
+    result = await handler(request, **request.match_info)
+  File "/usr/src/homeassistant/homeassistant/components/http/decorators.py", line 81, in with_admin
+    return await func(self, request, *args, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/components/http/data_validator.py", line 70, in wrapper
+    return await method(view, request, data, *args, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/components/config/config_entries.py", line 172, in post
+    return await self._post_impl(request, data)
+  File "/usr/src/homeassistant/homeassistant/components/config/config_entries.py", line 179, in _post_impl
+    return await super()._post_impl(request, data)
+  File "/usr/src/homeassistant/homeassistant/helpers/data_entry_flow.py", line 84, in _post_impl
+    result = await self._flow_mgr.async_init(
+  File "/usr/src/homeassistant/homeassistant/config_entries.py", line 1262, in async_init
+    flow, result = await self._async_init(flow_id, handler, context, data)
+  File "/usr/src/homeassistant/homeassistant/config_entries.py", line 1292, in _async_init
+    result = await self._async_handle_step(flow, flow.init_step, data)
+  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 517, in _async_handle_step
+    result: _FlowResultT = await getattr(flow, method)(user_input)
+  File "/config/custom_components/icloud3/config_flow.py", line 573, in async_step_user
+    config_file.load_storage_icloud3_configuration_file()
+  File "/config/custom_components/icloud3/support/config_file.py", line 70, in load_storage_icloud3_configuration_file
+    write_storage_icloud3_configuration_file('_backup')
+  File "/config/custom_components/icloud3/support/config_file.py", line 516, in write_storage_icloud3_configuration_file
+    with open(filename, 'w', encoding='utf8') as f:
+
+2024-06-06 16:15:33.255 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'icloud3' at custom_components/icloud3/support/config_file.py, line 516: with open(filename, 'w', encoding='utf8') as f: (offender: /config/custom_components/icloud3/support/config_file.py, line 516: with open(filename, 'w', encoding='utf8') as f:), please create a bug report at https://github.com/gcobb321/icloud3_v3/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 452, in _handle_request
+    resp = await request_handler(request)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_app.py", line 543, in _handle
+    resp = await handler(request)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_middlewares.py", line 114, in impl
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/security_filter.py", line 92, in security_filter_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/forwarded.py", line 83, in forwarded_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/request_context.py", line 26, in request_context_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/ban.py", line 85, in ban_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/auth.py", line 242, in auth_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/headers.py", line 32, in headers_middleware
+    response = await handler(request)
+  File "/usr/src/homeassistant/homeassistant/helpers/http.py", line 73, in handle
+    result = await handler(request, **request.match_info)
+  File "/usr/src/homeassistant/homeassistant/components/http/decorators.py", line 81, in with_admin
+    return await func(self, request, *args, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/components/http/data_validator.py", line 70, in wrapper
+    return await method(view, request, data, *args, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/components/config/config_entries.py", line 172, in post
+    return await self._post_impl(request, data)
+  File "/usr/src/homeassistant/homeassistant/components/config/config_entries.py", line 179, in _post_impl
+    return await super()._post_impl(request, data)
+  File "/usr/src/homeassistant/homeassistant/helpers/data_entry_flow.py", line 84, in _post_impl
+    result = await self._flow_mgr.async_init(
+  File "/usr/src/homeassistant/homeassistant/config_entries.py", line 1262, in async_init
+    flow, result = await self._async_init(flow_id, handler, context, data)
+  File "/usr/src/homeassistant/homeassistant/config_entries.py", line 1292, in _async_init
+    result = await self._async_handle_step(flow, flow.init_step, data)
+  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 517, in _async_handle_step
+    result: _FlowResultT = await getattr(flow, method)(user_input)
+  File "/config/custom_components/icloud3/config_flow.py", line 573, in async_step_user
+    config_file.load_storage_icloud3_configuration_file()
+  File "/config/custom_components/icloud3/support/config_file.py", line 97, in load_storage_icloud3_configuration_file
+    config_file_check_new_ic3_version()
+  File "/config/custom_components/icloud3/support/config_file.py", line 200, in config_file_check_new_ic3_version
+    write_storage_icloud3_configuration_file()
+  File "/config/custom_components/icloud3/support/config_file.py", line 516, in write_storage_icloud3_configuration_file
+    with open(filename, 'w', encoding='utf8') as f:
+
+2024-06-06 16:15:39.261 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'icloud3' at custom_components/icloud3/support/hacs_ic3.py, line 70: with open(hacs_repository_file, 'r') as f: (offender: /config/custom_components/icloud3/support/hacs_ic3.py, line 70: with open(hacs_repository_file, 'r') as f:), please create a bug report at https://github.com/gcobb321/icloud3_v3/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/config/custom_components/icloud3/support/hacs_ic3.py", line 38, in check_hacs_icloud3_update_available
+    hacs_ic3_items  = _get_hacs_ic3_data(hacs_repository_file)
+  File "/config/custom_components/icloud3/support/hacs_ic3.py", line 70, in _get_hacs_ic3_data
+    with open(hacs_repository_file, 'r') as f:
+
+2024-06-06 16:17:01.621 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'icloud3' at custom_components/icloud3/support/config_file.py, line 516: with open(filename, 'w', encoding='utf8') as f: (offender: /config/custom_components/icloud3/support/config_file.py, line 516: with open(filename, 'w', encoding='utf8') as f:), please create a bug report at https://github.com/gcobb321/icloud3_v3/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 452, in _handle_request
+    resp = await request_handler(request)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_app.py", line 543, in _handle
+    resp = await handler(request)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_middlewares.py", line 114, in impl
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/security_filter.py", line 92, in security_filter_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/forwarded.py", line 83, in forwarded_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/request_context.py", line 26, in request_context_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/ban.py", line 85, in ban_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/auth.py", line 242, in auth_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/headers.py", line 32, in headers_middleware
+    response = await handler(request)
+  File "/usr/src/homeassistant/homeassistant/helpers/http.py", line 73, in handle
+    result = await handler(request, **request.match_info)
+  File "/usr/src/homeassistant/homeassistant/components/http/decorators.py", line 81, in with_admin
+    return await func(self, request, *args, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/components/config/config_entries.py", line 285, in post
+    return await super().post(request, flow_id)
+  File "/usr/src/homeassistant/homeassistant/components/http/data_validator.py", line 70, in wrapper
+    return await method(view, request, data, *args, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/helpers/data_entry_flow.py", line 122, in post
+    result = await self._flow_mgr.async_configure(flow_id, data)
+  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 368, in async_configure
+    result = await self._async_configure(flow_id, user_input)
+  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 414, in _async_configure
+    result = await self._async_handle_step(
+  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 517, in _async_handle_step
+    result: _FlowResultT = await getattr(flow, method)(user_input)
+  File "/config/custom_components/icloud3/config_flow.py", line 2292, in async_step_icloud_account
+    self._update_configuration_file(user_input)
+  File "/config/custom_components/icloud3/config_flow.py", line 1911, in _update_configuration_file
+    config_file.write_storage_icloud3_configuration_file()
+  File "/config/custom_components/icloud3/support/config_file.py", line 516, in write_storage_icloud3_configuration_file
+    with open(filename, 'w', encoding='utf8') as f:
+
+2024-06-06 16:19:02.296 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'icloud3' at custom_components/icloud3/support/config_file.py, line 516: with open(filename, 'w', encoding='utf8') as f: (offender: /config/custom_components/icloud3/support/config_file.py, line 516: with open(filename, 'w', encoding='utf8') as f:), please create a bug report at https://github.com/gcobb321/icloud3_v3/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 452, in _handle_request
+    resp = await request_handler(request)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_app.py", line 543, in _handle
+    resp = await handler(request)
+  File "/usr/local/lib/python3.12/site-packages/aiohttp/web_middlewares.py", line 114, in impl
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/security_filter.py", line 92, in security_filter_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/forwarded.py", line 83, in forwarded_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/request_context.py", line 26, in request_context_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/ban.py", line 85, in ban_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/auth.py", line 242, in auth_middleware
+    return await handler(request)
+  File "/usr/src/homeassistant/homeassistant/components/http/headers.py", line 32, in headers_middleware
+    response = await handler(request)
+  File "/usr/src/homeassistant/homeassistant/helpers/http.py", line 73, in handle
+    result = await handler(request, **request.match_info)
+  File "/usr/src/homeassistant/homeassistant/components/http/decorators.py", line 81, in with_admin
+    return await func(self, request, *args, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/components/config/config_entries.py", line 285, in post
+    return await super().post(request, flow_id)
+  File "/usr/src/homeassistant/homeassistant/components/http/data_validator.py", line 70, in wrapper
+    return await method(view, request, data, *args, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/helpers/data_entry_flow.py", line 122, in post
+    result = await self._flow_mgr.async_configure(flow_id, data)
+  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 368, in async_configure
+    result = await self._async_configure(flow_id, user_input)
+  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 414, in _async_configure
+    result = await self._async_handle_step(
+  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 517, in _async_handle_step
+    result: _FlowResultT = await getattr(flow, method)(user_input)
+  File "/config/custom_components/icloud3/config_flow.py", line 2955, in async_step_update_device
+    config_file.write_storage_icloud3_configuration_file()
+  File "/config/custom_components/icloud3/support/config_file.py", line 516, in write_storage_icloud3_configuration_file
+    with open(filename, 'w', encoding='utf8') as f:
+
+2024-06-06 16:19:02.428 ERROR (MainThread) [homeassistant.components.device_tracker] Error adding entity device_tracker.kid_pro_kuo_phone14 for domain device_tracker with platform icloud3
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/entity_platform.py", line 719, in _async_add_entity
+    entity.add_to_platform_start(
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1323, in add_to_platform_start
+    raise HomeAssistantError(
+homeassistant.exceptions.HomeAssistantError: Entity 'device_tracker.kid_pro_kuo_phone14' cannot be added a second time to an entity platform
+2024-06-06 16:19:05.110 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/config/custom_components/icloud3/icloud3_main.py", line 320, in _polling_loop_5_sec_device
+    self._display_device_alert_evlog_greenbar_msg()
+  File "/config/custom_components/icloud3/icloud3_main.py", line 1241, in _display_device_alert_evlog_greenbar_msg
+    and show_on_displayed_evlog_screen_flag):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'show_on_displayed_evlog_screen_flag' where it is not associated with a value
+2024-06-06 16:19:15.171 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'icloud3' at custom_components/icloud3/support/hacs_ic3.py, line 70: with open(hacs_repository_file, 'r') as f: (offender: /config/custom_components/icloud3/support/hacs_ic3.py, line 70: with open(hacs_repository_file, 'r') as f:), please create a bug report at https://github.com/gcobb321/icloud3_v3/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/config/custom_components/icloud3/support/hacs_ic3.py", line 38, in check_hacs_icloud3_update_available
+    hacs_ic3_items  = _get_hacs_ic3_data(hacs_repository_file)
+  File "/config/custom_components/icloud3/support/hacs_ic3.py", line 70, in _get_hacs_ic3_data
+    with open(hacs_repository_file, 'r') as f:
+
+2024-06-06 16:19:20.196 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open inside the event loop by custom integration 'icloud3' at custom_components/icloud3/support/hacs_ic3.py, line 70: with open(hacs_repository_file, 'r') as f: (offender: /config/custom_components/icloud3/support/hacs_ic3.py, line 70: with open(hacs_repository_file, 'r') as f:), please create a bug report at https://github.com/gcobb321/icloud3_v3/issues
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 223, in <module>
+    sys.exit(main())
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 209, in main
+    exit_code = runner.run(runtime_conf)
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 190, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1988, in _run_once
+    handle._run()
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/config/custom_components/icloud3/support/hacs_ic3.py", line 38, in check_hacs_icloud3_update_available
+    hacs_ic3_items  = _get_hacs_ic3_data(hacs_repository_file)
+  File "/config/custom_components/icloud3/support/hacs_ic3.py", line 70, in _get_hacs_ic3_data
+    with open(hacs_repository_file, 'r') as f:
+
+2024-06-06 16:31:01.291 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 16:31:01.313 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 16:31:01.317 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 16:31:01.326 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 16:31:01.378 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 16:31:01.471 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 16:34:38.045 WARNING (SyncWorker_23) [homeassistant.util.yaml.loader] YAML file /config/themes/m3-04-magenta/m3-04-magenta.yaml contains duplicate key "theme-sys-ha-disabled-text-color". Check lines 539 and 541
+2024-06-06 16:34:38.045 WARNING (SyncWorker_23) [homeassistant.util.yaml.loader] YAML file /config/themes/m3-04-magenta/m3-04-magenta.yaml contains duplicate key "theme-sys-ha-card-background-color-active". Check lines 553 and 554
+2024-06-06 16:34:38.046 WARNING (SyncWorker_23) [homeassistant.util.yaml.loader] YAML file /config/themes/m3-04-magenta/m3-04-magenta.yaml contains duplicate key "theme-sys-ha-accent-color". Check lines 860 and 883
+2024-06-06 16:34:38.047 WARNING (SyncWorker_23) [homeassistant.util.yaml.loader] YAML file /config/themes/m3-04-magenta/m3-04-magenta.yaml contains duplicate key "label-badge-text-color". Check lines 1009 and 1079
+2024-06-06 16:34:38.047 WARNING (SyncWorker_23) [homeassistant.util.yaml.loader] YAML file /config/themes/m3-04-magenta/m3-04-magenta.yaml contains duplicate key "ha-label-badge-label-color". Check lines 1010 and 1080
+2024-06-06 16:51:01.864 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 16:51:01.874 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 16:51:01.904 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 16:51:01.931 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 16:51:01.946 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 16:51:01.948 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:11:02.353 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:11:02.355 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:11:02.397 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:11:02.413 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:11:02.415 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:11:02.420 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:31:02.879 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:31:02.881 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:31:02.934 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:31:02.938 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:31:02.951 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:31:02.990 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 17:45:17.052 WARNING (MainThread) [smartrent.utils] Exception occured! ConnectionClosedError <class 'websockets.exceptions.ConnectionClosedError'>
+2024-06-06 17:45:17.055 WARNING (MainThread) [smartrent.utils] Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 959, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1029, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1104, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1161, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/websockets/legacy/framing.py", line 68, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/asyncio/streams.py", line 750, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/smartrent/utils.py", line 425, in _async_update_state_via_ws
+    async for message in websocket:
+  File "/usr/local/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 497, in __aiter__
+    yield await self.recv()
+          ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 568, in recv
+    await self.ensure_open()
+  File "/usr/local/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 930, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+2024-06-06 17:45:17.055 WARNING (MainThread) [smartrent.utils] Retrying websocket in 1.0 seconds...
+2024-06-06 18:01:03.567 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:01:03.570 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:01:03.602 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:01:03.623 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:01:03.634 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:01:03.642 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:21:04.121 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:21:04.124 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:21:04.170 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:21:04.175 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:21:04.184 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:21:04.214 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:41:04.635 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:41:04.637 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:41:04.685 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:41:04.704 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:41:04.706 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 18:41:04.708 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 19:01:05.054 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 19:01:05.055 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 19:01:05.100 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 19:01:05.109 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 19:01:05.119 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 19:01:05.131 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 19:21:05.584 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 19:21:05.586 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 19:21:05.617 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 19:21:05.654 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 19:21:05.660 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...
+2024-06-06 19:21:05.697 WARNING (MainThread) [smartrent.utils] InvalidAuth detected. Trying again with updated token...

@@ -1,100 +1,558 @@
-06-06 12:17:00  
+06-06 16:15:38  
                                            ⛔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-                                           ⛔    iCloud3 v3.0.5.1, Thursday, 2024-06-06 12:17:00
+                                           ⛔    iCloud3 v3.0.5.1, Thursday, 2024-06-06 16:15:38
                                            ⛔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-06-06 12:17:00 [messaging...:0344] _INIT_   Profile:
-                                           {'version': 1, 'ic3_version': '3.0.5.1', 'version_install_date': '2024-06-06 01:01:35', 'config_update_date': '2024-06-06 11:43:13', 'event_log_version': '3.0.17', 'event_log_version_running': '', 'event_log_card_directory': 'www/icloud3', 'event_log_card_program': 'icloud3-event-log-card.js', 'event_log_btnconfig_url': '', 'picture_www_dirs': []}
-06-06 12:17:00 [messaging...:0344] _INIT_   Tracking:
-                                           {'username': 'se...........@gm.......', 'password': 'iF..........', 'encode_password': True, 'icloud_server_endpoint_suffix': 'None', 'setup_icloud_session_early': True, 'data_source': 'famshr, mobapp', 'devices': '1'}
-06-06 12:17:00 [messaging...:0344] _INIT_   General Configuration:
+06-06 16:15:38 [messaging...:0290] _INIT_   Profile:
+                                           {'version': -1, 'ic3_version': '3.0.5.1', 'version_install_date': '2024-06-06 16:15:33', 'config_update_date': '2024-06-06 16:15:38', 'event_log_version': '', 'event_log_version_running': '', 'event_log_card_directory': 'www/icloud3', 'event_log_card_program': 'icloud3-event-log-card.js', 'event_log_btnconfig_url': '', 'picture_www_dirs': []}
+06-06 16:15:38 [messaging...:0290] _INIT_   Tracking:
+                                           {'username': '', 'password': '', 'encode_password': True, 'icloud_server_endpoint_suffix': '', 'setup_icloud_session_early': True, 'data_source': 'famshr,mobapp', 'devices': '0'}
+06-06 16:15:38 [messaging...:0290] _INIT_   General Configuration:
+                                           {'log_level': 'debug-auto-reset', 'log_level_devices': ['all'], 'unit_of_measurement': 'mi', 'time_format': '12-hour', 'display_zone_format': 'fname', 'device_tracker_state_source': 'ic3_fname', 'max_interval': 240, 'offline_interval': 20, 'exit_zone_interval': 3, 'mobapp_alive_interval': 60, 'old_location_threshold': 3, 'old_location_adjustment': 0, 'gps_accuracy_threshold': 100, 'display_gps_lat_long': True, 'travel_time_factor': 0.5, 'tfz_tracking_max_distance': 8, 'passthru_zone_time': 0.5, 'track_from_base_zone_used': True, 'track_from_base_zone': 'home', 'track_from_home_zone': True, 'center_in_zone': False, 'discard_poor_gps_inzone': False, 'distance_between_devices': True, 'inzone_intervals': {'iphone': 120, 'ipad': 120, 'watch': 15, 'airpods': 15, 'no_mobapp': 15, 'other': 120}, 'waze_used': True, 'waze_region': 'us', 'waze_min_distance': 1, 'waze_max_distance': 1000, 'waze_realtime': False, 'waze_history_database_used': True, 'waze_history_max_distance': 20, 'waze_history_track_direction': 'north_south', 'stat_zone_fname': 'StatZon#', 'stat_zone_still_time': 8, 'stat_zone_inzone_interval': 30, 'stat_zone_base_latitude': 1, 'stat_zone_base_longitude': 0, 'display_text_as': ['#1', '#2', '#3', '#4', '#5', '#6', '#7', '#8', '#9', '#10'], 'away_time_zone_1_offset': 0, 'away_time_zone_1_devices': ['none'], 'away_time_zone_2_offset': 0, 'away_time_zone_2_devices': ['none']}
+                                           {'country_code': 'us', 'use_metric': False}
+06-06 16:15:38 [messaging...:0290] _INIT_   
+06-06 16:15:38 [messaging...:0290] _INIT_   
+06-06 16:15:38 [__init__....:0155] _INIT_   Setting up iCloud3 v3.0.5.1
+06-06 16:15:38 [restore_stat:0068] _INIT_   Creating iCloud3 Restore State File - /config/.storage/icloud3/restore_state
+06-06 16:15:38 [sensor......:1217] _INIT_   Sensor entity created: sensor.icloud3_event_log, #1
+06-06 16:15:38 [sensor......:1217] _INIT_   Sensor entity created: sensor.icloud3_wazehist_track, #2
+06-06 16:15:38 [sensor......:0111] _INIT_   Sensor entities created:  2
+06-06 16:15:38 [sensor......:0112] _INIT_   Sensor entities excluded: 0
+06-06 16:15:38 [waze........:0073] _INIT_   Set Up Waze > Server-United States, Canada (US), CountryCode-US, MinDist-1km, MaxDist-1000km, Realtime-False, HistoryDatabaseUsed-True
+06-06 16:15:38 [waze_history:0180] _INIT_   Waze History Database > /config/.storage/icloud3/waze_location_history.db
+06-06 16:15:39 [start_ic3...:0470] _INIT_   Configure iCloud3 Operations >
+                                                • Load configuration parameters
+                                                • Set Display Text As Fields (0 used)
+                                                • Set Default Tracking Method (iCloud)
+                                                • Initialize Debug Control (debug-auto-reset)
+                                                • Set Unit of Measure Formats (mi)
+                                                • Set Event Log Record Limits (1500 Events)
+                                                • Device Tracker State Value Source 
+                                                 (iCloud3 Zone Friendly Name)
+06-06 16:15:39 [__init__....:0236] _INIT_   START iCloud3 Initial Load Executor Job (iCloud3.start_icloud3)
+06-06 16:15:39 [start_ic3_co:0042] STAGE1 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 1 > INITIAL PREPARATIONS
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:15:39  
+                                           ⛔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                           ⛔    iCloud3 v3.0.5.1, Thursday, 2024-06-06 16:15:39
+                                           ⛔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:15:39 [start_ic3_co:0070] _INIT_   Profile:
+                                           {'version': -1, 'ic3_version': '3.0.5.1', 'version_install_date': '2024-06-06 16:15:33', 'config_update_date': '2024-06-06 16:15:39', 'event_log_version': '', 'event_log_version_running': '', 'event_log_card_directory': 'www/icloud3', 'event_log_card_program': 'icloud3-event-log-card.js', 'event_log_btnconfig_url': '', 'picture_www_dirs': []}
+06-06 16:15:39 [start_ic3_co:0070] _INIT_   Tracking:
+                                           {'username': '', 'password': '', 'encode_password': True, 'icloud_server_endpoint_suffix': '', 'setup_icloud_session_early': True, 'data_source': 'famshr,mobapp', 'devices': '0'}
+06-06 16:15:39 [start_ic3_co:0070] _INIT_   General Configuration:
                                            {'log_level': 'debug-auto-reset', 'log_level_devices': ['all'], 'unit_of_measurement': 'mi', 'time_format': '12-hour', 'display_zone_format': 'fname', 'device_tracker_state_source': 'ic3_fname', 'max_interval': 240, 'offline_interval': 20, 'exit_zone_interval': 3, 'mobapp_alive_interval': 60, 'old_location_threshold': 3, 'old_location_adjustment': 0, 'gps_accuracy_threshold': 100, 'display_gps_lat_long': True, 'travel_time_factor': 0.5, 'tfz_tracking_max_distance': 8, 'passthru_zone_time': 0.5, 'track_from_base_zone_used': True, 'track_from_base_zone': 'home', 'track_from_home_zone': True, 'center_in_zone': False, 'discard_poor_gps_inzone': False, 'distance_between_devices': True, 'inzone_intervals': {'iphone': 120, 'ipad': 120, 'watch': 15, 'airpods': 15, 'no_mobapp': 15, 'other': 120}, 'waze_used': True, 'waze_region': 'us', 'waze_min_distance': 1, 'waze_max_distance': 1000, 'waze_realtime': False, 'waze_history_database_used': True, 'waze_history_max_distance': 20, 'waze_history_track_direction': 'north_south', 'stat_zone_fname': 'StatZon#', 'stat_zone_still_time': 8, 'stat_zone_inzone_interval': 30, 'stat_zone_base_latitude': 1, 'stat_zone_base_longitude': 0, 'display_text_as': ['#1', '#2', '#3', '#4', '#5', '#6', '#7', '#8', '#9', '#10'], 'away_time_zone_1_offset': 0, 'away_time_zone_1_devices': ['none'], 'away_time_zone_2_offset': 0, 'away_time_zone_2_devices': ['none']}
                                            {'country_code': 'US', 'region_code': 'GA', 'zip_code': '30308', 'region_name': 'Georgia', 'city': 'Atlanta', 'time_zone': 'America/New_York', 'latitude': 33.7697, 'longitude': -84.3754, 'use_metric': False}
-06-06 12:17:00 [messaging...:0344] _INIT_   
-06-06 12:17:00 [messaging...:0344] _INIT_   Sebastien, kid_pro_kuo_phone14:
-                                           {'ic3_devicename': 'kid_pro_kuo_phone14', 'fname': 'Sebastien', 'picture': 'None', 'evlog_display_order': 0, 'unique_id': '', 'device_type': 'iphone', 'inzone_interval': 120.0, 'fixed_interval': 0.0, 'tracking_mode': 'track', 'famshr_devicename': 'kid-pro-Kuo-Watch', 'famshr_device_id': 'AZsy/acm1QXkPNmUEHXE7G63gp9g0lpyDVxtz6aRtK80y7HyV3Pzv98XJBJ/MutNF/jq7Elaggu23g==', 'raw_model': 'Watch5,4', 'model': 'Apple Watch', 'model_display_name': 'Apple Watch 5', 'fmf_email': 'None', 'fmf_device_id': '', 'mobile_app_device': 'kid_pro_kuo_phone_14', 'track_from_base_zone': 'home', 'track_from_zones': ['home'], 'log_zones': ['home', 'name-device-zone'], 'old_devicename': 'kid_pro_kuo_phone14'}
-06-06 12:17:00 [messaging...:0344] _INIT_   
-06-06 12:17:00 Traceback (most recent call last):
-  File "/config/custom_components/icloud3/support/restore_state.py", line 121, in write_storage_icloud3_restore_state_file
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 131, in protected_loop_func
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/config/.storage/icloud3/restore_state'
-
-06-06 12:18:00 Traceback (most recent call last):
-  File "/config/custom_components/icloud3/support/restore_state.py", line 121, in write_storage_icloud3_restore_state_file
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 131, in protected_loop_func
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/config/.storage/icloud3/restore_state'
-
-06-06 12:19:00 Traceback (most recent call last):
-  File "/config/custom_components/icloud3/support/restore_state.py", line 121, in write_storage_icloud3_restore_state_file
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 131, in protected_loop_func
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/config/.storage/icloud3/restore_state'
-
-06-06 12:20:00 Traceback (most recent call last):
-  File "/config/custom_components/icloud3/support/restore_state.py", line 121, in write_storage_icloud3_restore_state_file
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 131, in protected_loop_func
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/config/.storage/icloud3/restore_state'
-
-06-06 12:21:00 Traceback (most recent call last):
-  File "/config/custom_components/icloud3/support/restore_state.py", line 121, in write_storage_icloud3_restore_state_file
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 131, in protected_loop_func
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/config/.storage/icloud3/restore_state'
-
-06-06 12:22:00 Traceback (most recent call last):
-  File "/config/custom_components/icloud3/support/restore_state.py", line 121, in write_storage_icloud3_restore_state_file
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 131, in protected_loop_func
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/config/.storage/icloud3/restore_state'
-
-06-06 12:23:00 Traceback (most recent call last):
-  File "/config/custom_components/icloud3/support/restore_state.py", line 121, in write_storage_icloud3_restore_state_file
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 131, in protected_loop_func
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/config/.storage/icloud3/restore_state'
-
-06-06 12:24:00 Traceback (most recent call last):
-  File "/config/custom_components/icloud3/support/restore_state.py", line 121, in write_storage_icloud3_restore_state_file
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 131, in protected_loop_func
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/config/.storage/icloud3/restore_state'
-
-06-06 12:25:00 Traceback (most recent call last):
-  File "/config/custom_components/icloud3/support/restore_state.py", line 121, in write_storage_icloud3_restore_state_file
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 131, in protected_loop_func
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/config/.storage/icloud3/restore_state'
-
-06-06 12:26:00 Traceback (most recent call last):
-  File "/config/custom_components/icloud3/support/restore_state.py", line 121, in write_storage_icloud3_restore_state_file
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 131, in protected_loop_func
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/config/.storage/icloud3/restore_state'
-
-06-06 12:27:00 Traceback (most recent call last):
-  File "/config/custom_components/icloud3/support/restore_state.py", line 121, in write_storage_icloud3_restore_state_file
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 131, in protected_loop_func
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/config/.storage/icloud3/restore_state'
-
-06-06 12:28:00 Traceback (most recent call last):
-  File "/config/custom_components/icloud3/support/restore_state.py", line 121, in write_storage_icloud3_restore_state_file
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 131, in protected_loop_func
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/config/.storage/icloud3/restore_state'
-
-06-06 12:28:12 [start_ic3...:0492] ------   HA Shutting Down
+06-06 16:15:39 [start_ic3_co:0070] _INIT_   
+06-06 16:15:39 [start_ic3_co:0070] _INIT_   
+06-06 16:15:39 [waze........:0073] _INIT_   Set Up Waze > Server-United States, Canada (US), CountryCode-US, MinDist-1km, MaxDist-1000km, Realtime-False, HistoryDatabaseUsed-True
+06-06 16:15:39 [waze_history:0180] _INIT_   Waze History Database > /config/.storage/icloud3/waze_location_history.db
+06-06 16:15:39 [start_ic3...:0470] _INIT_   Configure iCloud3 Operations >
+                                                • Load configuration parameters
+                                                • Set Display Text As Fields (0 used)
+                                                • Set Default Tracking Method (iCloud)
+                                                • Initialize Debug Control (debug-auto-reset)
+                                                • Set Unit of Measure Formats (mi)
+                                                • Set Event Log Record Limits (1500 Events)
+                                                • Device Tracker State Value Source 
+                                                 (iCloud3 Zone Friendly Name)
+06-06 16:15:39 [start_ic3_co:0078] _INIT_   iCloud3 Directory > /config/custom_components/icloud3
+06-06 16:15:39 [start_ic3_co:0082] _INIT_   iCloud3 Configuration File > /config/.storage/icloud3/configuration
+06-06 16:15:39 [start_ic3...:0911] 🛑       BROWSER REFRESH NEEDED > iCloud3 Event Log was updated to v3.0.17,  • Refresh your browser (Chrome, MacOS, Edge):,  1. Press Ctrl+Shift+Del, Clear Data, Refresh,  2. On Settings tab, check Clear Images and File, then Click Clear Data, Refresh,  3. Select the Home Assistant tab, then Refresh the display,  • Refresh the Mobile App on iPhones, iPads, etc:,  1. HA Sidebar, Configuration, Companion App,  2. Debugging, Reset frontend cache, Settings, Done,  3. Close Companion App, Redisplay iCloud3 screen,  4. Refresh, Pull down from the top, Spinning wheel, Done, ---------------------------------------------------------------------------,  • Old Version.. - vNot Installed,  • New Version - v3.0.17,  • Copied From - icloud3/event___log_card/,  • Copied To.... - /config/www/icloud3/
+06-06 16:15:39 [start_ic3...:0259] 🛑       LOVELACE RESOURCES UPDATED > , Added: /local/icloud3/icloud3-event-log-card.js
+06-06 16:15:39 [start_ic3_co:0089] _INIT_   LocationInfo-{'country_code': 'US', 'region_code': 'GA', 'zip_code': '30308', 'region_name': 'Georgia', 'city': 'Atlanta', 'time_zone': 'America/New_York', 'latitude': 33.7697, 'longitude': -84.3754, 'use_metric': False}
+06-06 16:15:39 [time_util...:0412] _INIT_   Local Time Zone Offset > UTC-04:00 hrs, EDT, Country Code-US
+06-06 16:15:39 [start_ic3_co:0105] STAGE2 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 2 > PREPARE SUPPORT SERVICES
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:15:39 [start_ic3...:1111] STAGE2   Set up Zones > zone, Display (fname)
+                                                • home, Home (r100m/328.1ft)
+06-06 16:15:39 [start_ic3...:1132] STAGE2   Special Zone Setup >
+                                                • Enter Zone Delay > DelayTime-30 secs
+                                                • Stationary Zone > Radius-100m, DistMoveLimit-125m, MinDistFromAnotherZone-200m
+06-06 16:15:39 [waze........:0073] STAGE2   Set Up Waze > Server-United States, Canada (US), CountryCode-US, MinDist-1km, MaxDist-1000km, Realtime-False, HistoryDatabaseUsed-True
+06-06 16:15:39 [waze_history:0180] STAGE2   Waze History Database > /config/.storage/icloud3/waze_location_history.db
+06-06 16:15:39 [start_ic3_co:0143] 🛑       CONFIGURATION ALERT > INITIAL INSTALLATION - CONFIGURATION IS REQUIRED, , 1. Select `Settings > Devices & Services > Integrations`, 2. Select `+Add Integration` to add the iCloud3 integration if it is not dislayed. Then search for `iCloud3`, select it and complete the installation., 3. Select `iCloud3 > Configuration` to open iCloud3 Configure Settings screens., 4. Review and setup the `iCloud Account` and `Update Devices` configuration screens., 5. Exit the configurator and `Restart iCloud3`.
+06-06 16:15:39 [start_ic3_co:0150] STAGE2   Gb.Zones=[<Zone: not_home>, <Zone: Not_Home>, <Zone: not_set>, <Zone: Not_Set>, <Zone: ──>, <Zone: NotSet>, <Zone: stationary>, <Zone: Stationary>, <Zone: unknown>, <Zone: home>, <Zone: work>]
+06-06 16:15:39 [start_ic3_co:0157] STAGE3 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 3 > PREPARE CONFIGURED DEVICES
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:15:39 [start_ic3_co:0169] STAGE3   Data Sources > FamShr, MobApp
+06-06 16:15:39 [start_ic3_co:0187] STAGE3   Gb.Devices=[]
+06-06 16:15:39 [start_ic3_co:0187] STAGE3   Gb.DevDevices_by_devicename={}
+06-06 16:15:39 [start_ic3_co:0187] STAGE3   Gb.conf_devicenames=[]
+06-06 16:15:39 [start_ic3_co:0187] STAGE3   Gb.conf_famshr_devicenames=[]
+06-06 16:15:39 [start_ic3_co:0197] STAGE4 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 4 > SETUP ICLOUD & MOBAPP DATA SOURCE
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:15:39 [start_ic3_co:0208] 🛑       CONFIGURATION ALERT > The iCloud username or password has not been set up or is incorrect. iCloud will not be used for location tracking
+06-06 16:15:39 [start_ic3_co:0220] STAGE4   iCloud Location Service > Not used as a data source
+06-06 16:15:39 [start_ic3...:0609] STAGE4   Checking Mobile App Integration > Loaded, Devices-kid-pro-Kuo-Phone-14
+06-06 16:15:39 [start_ic3...:2271] STAGE4   Mobile App Devices > 0 of 0 used by iCloud3
+                                                × kid-pro-Kuo-Phone-14, kid_pro_kuo_phone_14 (iPhone15,3) >
+                                                     ◦Not Assigned to an iCloud3 Device
+06-06 16:15:39 [start_ic3_co:0238] STAGE4   Gb.mobile_app_device_fnames=['kid-pro-Kuo-Phone-14']
+06-06 16:15:39 [start_ic3_co:0238] STAGE4   Gb.mobapp_fnames_x_mobapp_id={'9a166549f91d5b46d6d4c5d07fb555a2': 'kid-pro-Kuo-Phone-14', 'kid-pro-Kuo-Phone-14': '9a166549f91d5b46d6d4c5d07fb555a2', None: '9a166549f91d5b46d6d4c5d07fb555a2'}
+06-06 16:15:39 [start_ic3_co:0238] STAGE4   Gb.mobapp_fnames_disabled=[]
+06-06 16:15:39 [start_ic3_co:0238] STAGE4   _.mobapp_id_by_mobapp_devicename={'kid_pro_kuo_phone_14': '9a166549f91d5b46d6d4c5d07fb555a2'}
+06-06 16:15:39 [start_ic3_co:0238] STAGE4   _.mobapp_devicename_by_mobapp_id={'9a166549f91d5b46d6d4c5d07fb555a2': 'kid_pro_kuo_phone_14'}
+06-06 16:15:39 [start_ic3_co:0238] STAGE4   _.last_updt_trig_by_mobapp_devicename={'kid_pro_kuo_phone_14': 'kid_pro_kuo_phone_14_last_update_trigger_2'}
+06-06 16:15:39 [start_ic3_co:0238] STAGE4   _.battery_level_sensors_by_mobapp_devicename={'kid_pro_kuo_phone_14': 'kid_pro_kuo_phone_14_battery_level_2'}
+06-06 16:15:39 [start_ic3_co:0238] STAGE4   _.battery_state_sensors_by_mobapp_devicename={'kid_pro_kuo_phone_14': 'kid_pro_kuo_phone_14_battery_state_2'}
+06-06 16:15:39 [start_ic3_co:0287] STAGE5 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 5 > DEVICE CONFIGURATION SUMMARY
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:15:39 [start_ic3...:2556] STAGE5   iCloud Location Tracking is not available
+06-06 16:15:39 [start_ic3_co:0307] STAGE5   Gb.Devices_by_devicename_tracked={}
+06-06 16:15:39 [start_ic3_co:0307] STAGE5   Gb.Devices_by_devicename_monitored={}
+06-06 16:15:39 [start_ic3_co:0307] STAGE5   _.inactive_devices=[]
+06-06 16:15:39 [start_ic3_co:0317] STAGE6 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    ICLOUD3 INITIALIZATION COMPLETE
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:15:39 [start_ic3...:2676] STAGE6   StatZones-None
+06-06 16:15:39 [start_ic3...:2679] STAGE6   Devices-None
+06-06 16:15:39 [start_ic3...:2687] STAGE6   Zones-not_home, Not_Home, not_set, Not_Set, ──, NotSet, stationary, Stationary, unknown, home, work
+06-06 16:15:39 [start_ic3_co:0346] 🛑       The following issues were detected when starting iCloud3. Scroll through the Startup Log for more information: , 1. Event Log was updated. Browser refresh needed, 2. iCloud3 Integration not set up, 3. iCloud username/password invalid or not set up
+06-06 16:15:39 [__init__....:0243] ------   iCloud3 v3.0.5.1 Startup Complete
+06-06 16:15:54 [config_flow.:4292] CONFIG   Show Form-menu_0, Errors-{'base': 'icloud_acct_not_set_up'}
+06-06 16:16:00 [config_flow.:4292] CONFIG   Show Form-menu_0, Errors-{'base': 'icloud_acct_not_set_up'}
+06-06 16:16:02 [config_flow.:4292] CONFIG   Show Form-icloud_account, Errors-{}
+06-06 16:16:02 [start_ic3...:0609] CONFIG   Checking Mobile App Integration > Loaded, Devices-kid-pro-Kuo-Phone-14
+06-06 16:16:38 [config_flow.:2216] CONFIG   icloud_account (login_icloud_account) > UserInput-{'data_source_icloud': ['famshr'], 'username': 'se...........@gm.......', 'password': 'iFA-HjYZa*3x', 'url_suffix_china': False, 'data_source_mobapp': ['mobapp'], 'endpoint_suffix': 'None', 'data_source': 'famshr, mobapp'}, Errors-None
+06-06 16:16:38 [config_flow.:2462] CONFIG   Logging into iCloud Acct > UserInput-{'data_source_icloud': ['famshr'], 'username': 'sebastien.kuo@gmail.com', 'password': 'iFA-HjYZa*3x', 'url_suffix_china': False, 'data_source_mobapp': ['mobapp'], 'endpoint_suffix': 'None', 'data_source': 'famshr, mobapp'}, Errors-{}, Step-icloud_account, CalledFrom-icloud_account
+06-06 16:16:39 [config_flow.:2501] CONFIG   Configure Settings > Logging into iCloud Account, 
+                                                • iCloud Account Currently Used > 
+                                                • New iCloud Account > se...........@gm.......
+06-06 16:16:39 [pyicloud_ic3:0535] CONFIG ❗Initialize PyiCloud Service, establish iCloud Location Services connection
+06-06 16:16:39 [pyicloud_ic3:0904] CONFIG ❗Session file does not exist
+06-06 16:16:39 [pyicloud_ic3:0494] CONFIG ❗AUTHENTICATING iCloud Account Access, se...........@gm....... (config)
+06-06 16:16:39 [pyicloud_ic3:0615] CONFIG ❗Authenticating account se...........@gm....... with token
+06-06 16:16:39 [pyicloud_ic3:0728] CONFIG ❗Authenticate.authenticate_with_password > Successful
+06-06 16:16:40 [pyicloud_ic3:0680] CONFIG ❗Authenticate.authenticate_with_token > Successful
+06-06 16:16:40 [pyicloud_ic3:1048] CONFIG ❗NEEDS-2FA, ChallengeRequired-True, TrustedBrowser-False
+06-06 16:16:40 [pyicloud_ic3:0648] CONFIG ❗Authentication completed successfully, method-Password+Token
+06-06 16:16:40 [pyicloud_ic3:0461] CONFIG ❗PyiCloud Instance Created > config
+06-06 16:16:40 [config_flow.:4292] CONFIG   Show Form-reauth, Errors-{'base': 'verification_code_needed'}
+06-06 16:16:52 [config_flow.:2374] CONFIG   reauth (send_verification_code) > UserInput-{'verification_code': '534020'}, Errors-None
+06-06 16:16:52 [pyicloud_ic3:1124] CONFIG ❗Verification Code accepted
+06-06 16:16:54 [pyicloud_ic3:0680] CONFIG ❗Authenticate.authenticate_with_token > Successful
+06-06 16:16:54 [config_flow.:2407] CONFIG   The Verification Code was accepted (534020)
+06-06 16:16:55 [config_flow.:2408] CONFIG   iCLOUD ALERT > Apple ID Verification complete
+06-06 16:16:55 [config_flow.:4292] CONFIG   Show Form-icloud_account, Errors-{'base': 'verification_code_accepted'}
+06-06 16:16:55 [start_ic3...:0609] CONFIG   Checking Mobile App Integration > Loaded, Devices-kid-pro-Kuo-Phone-14
+06-06 16:17:01 [config_flow.:2216] CONFIG   icloud_account (save) > UserInput-{'data_source_icloud': ['famshr'], 'username': 'se...........@gm.......', 'password': '********', 'url_suffix_china': False, 'data_source_mobapp': ['mobapp'], 'endpoint_suffix': 'None', 'data_source': 'famshr, mobapp'}, Errors-None
+06-06 16:17:01 [config_flow.:4292] CONFIG   Show Form-menu_0, Errors-{}
+06-06 16:17:03 [config_flow.:2601] CONFIG   device_list (None) > UserInput-None, Errors-None
+06-06 16:17:03 [config_flow.:4292] CONFIG   Show Form-device_list, Errors-{'base': 'inactive_no_devices'}
+06-06 16:17:05 [config_flow.:2601] CONFIG   device_list (add_device) > UserInput-{}, Errors-None
+06-06 16:17:05 [config_flow.:4292] CONFIG   Show Form-add_device, Errors-{}
+06-06 16:17:30 [config_flow.:2855] CONFIG   add_device (None) > UserInput-{'ic3_devicename': 'sebastien_iphone14', 'fname': 'Sebastien', 'device_type': 'iphone', 'tracking_mode': 'track', 'mobapp': True}, Errors-None
+06-06 16:17:30 [config_flow.:4292] CONFIG   Show Form-update_device, Errors-{}
+06-06 16:19:02 [config_flow.:2913] CONFIG   update_device (save) > UserInput-{'ic3_devicename': 'kid_pro_Kuo_Phone14', 'fname': 'Sebastien', 'device_type': 'iphone', 'tracking_mode': 'Track - Request Location and track the device', 'famshr_devicename': 'kid-pro-Kuo-Watch', 'mobile_app_device': 'Search: kid_pro_kuo_phone_14', 'picture': 'None', 'log_zones': ['none', 'home', 'name-zone-device'], 'track_from_zones': ['home', 'work'], 'inzone_interval': 120.0, 'fixed_interval': 0.0, 'track_from_base_zone': 'home', 'fmf_email': 'None'}, Errors-None
+06-06 16:19:02 [config_flow.:2947] CONFIG   Configuration Changed > AddDevice-kid_pro_kuo_phone14, Sebastien/iPhone
+06-06 16:19:02 [device_track:0246] CONFIG   Device Tracker entity created: device_tracker.kid_pro_kuo_phone14, #1
+06-06 16:19:02 [device_track:0100] CONFIG   Device Tracker Entities: 1
+06-06 16:19:02 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_moved_distance, #3
+06-06 16:19:02 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_last_update, #4
+06-06 16:19:02 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_badge, #5
+06-06 16:19:02 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_zone_name, #6
+06-06 16:19:02 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_travel_time, #7
+06-06 16:19:02 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_interval, #8
+06-06 16:19:02 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_arrival_time, #9
+06-06 16:19:02 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_battery, #10
+06-06 16:19:02 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_travel_time_min, #11
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_info, #12
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_next_update, #13
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_last_located, #14
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_zone_distance, #15
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_dir_of_travel, #16
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_home_distance, #17
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_battery_status, #18
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_name, #19
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_travel_time_min_work, #20
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_travel_time_min_home, #21
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_zone_info_work, #22
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_zone_info_home, #23
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_travel_time_work, #24
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_travel_time_home, #25
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_arrival_time_work, #26
+06-06 16:19:03 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_arrival_time_home, #27
+06-06 16:19:04 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_zone_distance_work, #28
+06-06 16:19:04 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_zone_distance_home, #29
+06-06 16:19:04 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_dir_of_travel_work, #30
+06-06 16:19:04 [sensor......:0438] CONFIG   Sensor entity created: sensor.kid_pro_kuo_phone14_dir_of_travel_home, #31
+06-06 16:19:04 [config_flow.:2601] CONFIG   device_list (None) > UserInput-None, Errors-None
+06-06 16:19:04 [config_flow.:4292] CONFIG   Show Form-device_list, Errors-{'base': 'conf_updated'}
+06-06 16:19:09 [config_flow.:2601] CONFIG   device_list (return) > UserInput-{'devices': 'kid_pro_kuo_phone14 → Sebastien, FamShr-(kid-pro-Kuo-Watch), MobApp-(Search: kid_pro_kuo_phone_14), TrackFromZones-(Work, Home)'}, Errors-None
+06-06 16:19:09 [config_flow.:4292] CONFIG   Show Form-menu_0, Errors-{}
+06-06 16:19:14 [config_flow.:4292] CONFIG   Show Form-restart_icloud3, Errors-{}
+06-06 16:19:15 [start_ic3...:0142] CONFIG   Configuration Loading > Type-Restart, Tracking
+06-06 16:19:15 [start_ic3_co:0042] STAGE1 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 1 > INITIAL PREPARATIONS
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:15 [start_ic3_co:0066] STAGE1 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    ICLOUD3 V3.0.5.1 > RESTARTING, THURSDAY, JUN 06
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:15  
+                                           ⛔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                           ⛔    iCloud3 v3.0.5.1, Thursday, 2024-06-06 16:19:15
+                                           ⛔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:15 [start_ic3_co:0070] _INIT_   Profile:
+                                           {'version': 1, 'ic3_version': '3.0.5.1', 'version_install_date': '2024-06-06 16:15:33', 'config_update_date': '2024-06-06 16:19:15', 'event_log_version': 'Not Installed', 'event_log_version_running': '', 'event_log_card_directory': 'www/icloud3', 'event_log_card_program': 'icloud3-event-log-card.js', 'event_log_btnconfig_url': '', 'picture_www_dirs': []}
+06-06 16:19:15 [start_ic3_co:0070] _INIT_   Tracking:
+                                           {'username': 'se...........@gm.......', 'password': 'iF..........', 'encode_password': True, 'icloud_server_endpoint_suffix': 'None', 'setup_icloud_session_early': True, 'data_source': 'famshr, mobapp', 'devices': '1'}
+06-06 16:19:15 [start_ic3_co:0070] _INIT_   General Configuration:
+                                           {'log_level': 'debug-auto-reset', 'log_level_devices': ['all'], 'unit_of_measurement': 'mi', 'time_format': '12-hour', 'display_zone_format': 'fname', 'device_tracker_state_source': 'ic3_fname', 'max_interval': 240, 'offline_interval': 20, 'exit_zone_interval': 3, 'mobapp_alive_interval': 60, 'old_location_threshold': 3, 'old_location_adjustment': 0, 'gps_accuracy_threshold': 100, 'display_gps_lat_long': True, 'travel_time_factor': 0.5, 'tfz_tracking_max_distance': 8, 'passthru_zone_time': 0.5, 'track_from_base_zone_used': True, 'track_from_base_zone': 'home', 'track_from_home_zone': True, 'center_in_zone': False, 'discard_poor_gps_inzone': False, 'distance_between_devices': True, 'inzone_intervals': {'iphone': 120, 'ipad': 120, 'watch': 15, 'airpods': 15, 'no_mobapp': 15, 'other': 120}, 'waze_used': True, 'waze_region': 'us', 'waze_min_distance': 1, 'waze_max_distance': 1000, 'waze_realtime': False, 'waze_history_database_used': True, 'waze_history_max_distance': 20, 'waze_history_track_direction': 'north_south', 'stat_zone_fname': 'StatZon#', 'stat_zone_still_time': 8, 'stat_zone_inzone_interval': 30, 'stat_zone_base_latitude': 1, 'stat_zone_base_longitude': 0, 'display_text_as': ['#1', '#2', '#3', '#4', '#5', '#6', '#7', '#8', '#9', '#10'], 'away_time_zone_1_offset': 0, 'away_time_zone_1_devices': ['none'], 'away_time_zone_2_offset': 0, 'away_time_zone_2_devices': ['none']}
+                                           {'country_code': 'US', 'region_code': 'GA', 'zip_code': '30308', 'region_name': 'Georgia', 'city': 'Atlanta', 'time_zone': 'America/New_York', 'latitude': 33.7697, 'longitude': -84.3754, 'use_metric': False}
+06-06 16:19:15 [start_ic3_co:0070] _INIT_   
+06-06 16:19:15 [start_ic3_co:0070] _INIT_   Sebastien, kid_pro_kuo_phone14:
+                                           {'ic3_devicename': 'kid_pro_kuo_phone14', 'fname': 'Sebastien', 'picture': 'None', 'evlog_display_order': 0, 'unique_id': '', 'device_type': 'iphone', 'inzone_interval': 120.0, 'fixed_interval': 0.0, 'tracking_mode': 'track', 'famshr_devicename': 'kid-pro-Kuo-Watch', 'famshr_device_id': 'AZsy/acm1QXkPNmUEHXE7G63gp9g0lpyDVxtz6aRtK80y7HyV3Pzv98XJBJ/MutNF/jq7Elaggu23g==', 'raw_model': 'Watch5,4', 'model': 'Apple Watch', 'model_display_name': 'Apple Watch 5', 'fmf_email': 'None', 'fmf_device_id': '', 'mobile_app_device': 'Search: kid_pro_kuo_phone_14', 'track_from_base_zone': 'home', 'track_from_zones': ['work', 'home'], 'log_zones': ['home', 'name-zone-device'], 'old_devicename': 'sebastien_iphone14'}
+06-06 16:19:15 [start_ic3_co:0070] _INIT_   
+06-06 16:19:15 [waze........:0073] _INIT_   Set Up Waze > Server-United States, Canada (US), CountryCode-US, MinDist-1km, MaxDist-1000km, Realtime-False, HistoryDatabaseUsed-True
+06-06 16:19:15 [waze_history:0180] _INIT_   Waze History Database > /config/.storage/icloud3/waze_location_history.db
+06-06 16:19:15 [start_ic3...:0470] _INIT_   Configure iCloud3 Operations >
+                                                • Load configuration parameters
+                                                • Set Display Text As Fields (0 used)
+                                                • Set Default Tracking Method (iCloud)
+                                                • Initialize Debug Control (debug-auto-reset)
+                                                • Set Unit of Measure Formats (mi)
+                                                • Set Event Log Record Limits (5500 Events)
+                                                • Device Tracker State Value Source 
+                                                 (iCloud3 Zone Friendly Name)
+06-06 16:19:15 [start_ic3_co:0078] _INIT_   iCloud3 Directory > /config/custom_components/icloud3
+06-06 16:19:15 [start_ic3_co:0082] _INIT_   iCloud3 Configuration File > /config/.storage/icloud3/configuration
+06-06 16:19:15 [start_ic3...:0893] _INIT_   iCloud3 Event Log > 
+                                                • Current Version Installed-v3.0.17
+                                                • File-/config/www/icloud3/icloud3-event-log-card.js
+06-06 16:19:15 [start_ic3_co:0089] _INIT_   LocationInfo-{'country_code': 'US', 'region_code': 'GA', 'zip_code': '30308', 'region_name': 'Georgia', 'city': 'Atlanta', 'time_zone': 'America/New_York', 'latitude': 33.7697, 'longitude': -84.3754, 'use_metric': False}
+06-06 16:19:15 [time_util...:0412] _INIT_   Local Time Zone Offset > UTC-04:00 hrs, EDT, Country Code-US
+06-06 16:19:15 [start_ic3_co:0105] STAGE2 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 2 > PREPARE SUPPORT SERVICES
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:15 [start_ic3...:1111] STAGE2   Set up Zones > zone, Display (fname)
+                                                • home, Home (r100m/328.1ft)
+06-06 16:19:15 [start_ic3...:1132] STAGE2   Special Zone Setup >
+                                                • Enter Zone Delay > DelayTime-30 secs
+                                                • Stationary Zone > Radius-100m, DistMoveLimit-125m, MinDistFromAnotherZone-200m
+06-06 16:19:15 [waze........:0073] STAGE2   Set Up Waze > Server-United States, Canada (US), CountryCode-US, MinDist-1km, MaxDist-1000km, Realtime-False, HistoryDatabaseUsed-True
+06-06 16:19:15 [waze_history:0180] STAGE2   Waze History Database > /config/.storage/icloud3/waze_location_history.db
+06-06 16:19:15 [waze_history:0327] STAGE2   WazeHistDB > Get Record, Table-zones, Criteria-entity_id='zone.work', NoRecord
+06-06 16:19:15 [waze_history:0539] STAGE2   WazeHistDB > Added zone, work, zoneId-1
+06-06 16:19:15 [waze_history:0327] STAGE2   WazeHistDB > Get Record, Table-zones, Criteria-entity_id='zone.home', NoRecord
+06-06 16:19:15 [waze_history:0539] STAGE2   WazeHistDB > Added zone, home, zoneId-2
+06-06 16:19:15 [start_ic3_co:0150] STAGE2   Gb.mobile_app_device_fnames=['kid-pro-Kuo-Phone-14']
+06-06 16:19:15 [start_ic3_co:0150] STAGE2   Gb.mobapp_fnames_x_mobapp_id={'9a166549f91d5b46d6d4c5d07fb555a2': 'kid-pro-Kuo-Phone-14', 'kid-pro-Kuo-Phone-14': '9a166549f91d5b46d6d4c5d07fb555a2', None: '9a166549f91d5b46d6d4c5d07fb555a2'}
+06-06 16:19:15 [start_ic3_co:0150] STAGE2   Gb.mobapp_fnames_disabled=[]
+06-06 16:19:15 [start_ic3_co:0150] STAGE2   Gb.Zones=[<Zone: not_home>, <Zone: Not_Home>, <Zone: not_set>, <Zone: Not_Set>, <Zone: ──>, <Zone: NotSet>, <Zone: stationary>, <Zone: Stationary>, <Zone: unknown>, <Zone: home>, <Zone: work>]
+06-06 16:19:15 [start_ic3_co:0157] STAGE3 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 3 > PREPARE CONFIGURED DEVICES
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:15 [start_ic3_co:0169] STAGE3   Data Sources > FamShr, MobApp
+06-06 16:19:15 [device......:0653] STAGE3   ADDED DeviceFmZone > kid_pro_kuo_phone14:home
+06-06 16:19:15 [start_ic3...:1257] STAGE3   ADDED Device > Sebastien (kid_pro_kuo_phone14)
+06-06 16:19:15 [start_ic3...:1278] STAGE3   ✓ kid_pro_kuo_phone14 > Sebastien/iPhone (Tracked)
+                                                •FamShr Device: kid-pro-Kuo-Watch
+                                                •MobApp Entity: Search: kid_pro_kuo_phone_14
+                                                •Track from Zones: ≤work-Passive≥, home
+06-06 16:19:15 [start_ic3_co:0187] STAGE3   Gb.Devices=[<Device: kid_pro_kuo_phone14>]
+06-06 16:19:15 [start_ic3_co:0187] STAGE3   Gb.DevDevices_by_devicename={'kid_pro_kuo_phone14': <Device: kid_pro_kuo_phone14>}
+06-06 16:19:15 [start_ic3_co:0187] STAGE3   Gb.conf_devicenames=['kid_pro_kuo_phone14']
+06-06 16:19:15 [start_ic3_co:0187] STAGE3   Gb.conf_famshr_devicenames=['kid-pro-Kuo-Watch']
+06-06 16:19:15 [start_ic3_co:0197] STAGE4 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 4 > SETUP ICLOUD & MOBAPP DATA SOURCE
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:15 [start_ic3_co:0216] STAGE4   iCloud Account > Logged Into-se...........@gm.......
+06-06 16:19:15 [pyicloud_ic3:0199] STAGE4 ❗Connecting to and Authenticating iCloud Location Service Interface (startup)
+06-06 16:19:15 [pyicloud_ic3:0535] STAGE4 ❗Initialize PyiCloud Service, establish iCloud Location Services connection
+06-06 16:19:15 [pyicloud_ic3:0922] STAGE4 ❗Read Cookies from /config/.storage/icloud/sebastienkuogmailcom
+06-06 16:19:15 [pyicloud_ic3:0494] STAGE4 ❗AUTHENTICATING iCloud Account Access, se...........@gm....... (startup)
+06-06 16:19:15 [pyicloud_ic3:0615] STAGE4 ❗Authenticating account se...........@gm....... with token
+06-06 16:19:15 [config_flow.:1090] STAGE4   Exit Configure Settings, UpdateParms-{'', 'restart', 'tracking'}
+06-06 16:19:17 [pyicloud_ic3:0680] STAGE4 ❗Authenticate.authenticate_with_token > Successful
+06-06 16:19:17 [pyicloud_ic3:0648] STAGE4 ❗Authentication completed successfully, method-Token
+06-06 16:19:17 [pyicloud_ic3:0206] STAGE4 ❗PyiCloud Instance Created > startup
+06-06 16:19:17 [pyicloud_ic3:0275] STAGE4 ❗iCloud Acct Auth #1 > Token, Last-00:00:00 (Never)
+06-06 16:19:17 [pyicloud_ic3:0054] STAGE4 ❗iCloud Location Service interface > Verified (startup)
+06-06 16:19:17 [pyicloud_ic3:0057] STAGE4 ❗PyiCloud Instance Verified > startup
+06-06 16:19:17 [pyicloud_ic3:0059] STAGE4 ❗PyiCloudInit Instance Verified > startup
+06-06 16:19:17 [start_ic3...:1346] STAGE4   Setting up iCloud Data Source
+06-06 16:19:17 [pyicloud_ic3:0099] STAGE4 ❗PyiCloud Instance Selected > startup
+06-06 16:19:17 [start_ic3...:1392] STAGE4   iCloud Location Service interface > Selected (startup)
+06-06 16:19:17 [start_ic3...:1756] 🛑       DUPLICATE FAMSHR DEVICES > There are several devices in the iCloud Account Family Sharing list with the same or similar names. The unused devices should be reviewed and removed. The Devices are:,  • kid-pro-Kuo-Phone-14,      ◦ kid-pro-Kuo-Phone-14 > Located-Never (iPhone15,3),      ◦ kid-pro-Kuo-Phone-14(2) > Located-36 secs ago (iPhone15,3),      ◦ Last Located > kid-pro-Kuo-Phone-14(2),  • kid-pro-Kuo-MBP14,      ◦ kid-pro-Kuo-MBP14 > Located-3 mins ago (MacBookPro18,3),      ◦ kid-pro-Kuo-MBP14(2) > Located-Never (MacBookPro18,3),      ◦ Last Located > kid-pro-Kuo-MBP14,  • Alex's AirPods,      ◦ Alex's AirPods > Located-15.8 hrs ago (AirPods_8207),      ◦ Alex's AirPods(2) > Located-Never (AirPods_8207),      ◦ Last Located > Alex's AirPods
+06-06 16:19:17 [start_ic3...:1588] STAGE4   iCloud Acct Family Sharing Devices > 1 of 16 used by iCloud3
+                                                × AirPods (AirPods; AirPods8207) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × Alex's AirPods (AirPods; AirPods8207) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × Alex's AirPods(2) (AirPods; AirPods8207) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × Sebastien's AirPods (AirPods; AirPods8207) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × Sebastien's AirPods #2 (AirPods; AirPods8207) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × Z's MacBook Pro (MacBook Pro 15"; MacBookPro11,2) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-AirPods (AirPods; AirPods8211) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-MBP14 (MacBook Pro 14"; MacBookPro18,3) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-MBP14(2) (MacBook Pro 14"; MacBookPro18,3) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-Pad (iPad Pro; iPad8,7) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-Phone-12 (iPhone 12 Pro Max; iPhone13,4) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-Phone-14 (iPhone 14 Pro Max; iPhone15,3) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-Phone-14(2) (iPhone 14 Pro Max; iPhone15,3) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-Pods (AirPods; AirPods8207) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-Pods Pro (AirPods Pro; AirPods8212) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                ✓kid-pro-Kuo-Watch (Apple Watch 5; Watch5,4) >
+                                                     ◦kid_pro_kuo_phone14, Sebastien
+06-06 16:19:17 [start_ic3...:2019] STAGE4   Set PyiCloud Device Id > kid_pro_kuo_phone14, DataSource-famshr, , FamShr-(#AZsy/acm)
+06-06 16:19:17 [start_ic3...:2027] STAGE4   PyiCloud Devices > kid-pro-Kuo-Phone-14/AY25cfV/-FamShr, kid-pro-Kuo-AirPods/AS+SJnPk-FamShr, Z's MacBook Pro/ATOg5tGi-FamShr, kid-pro-Kuo-Watch/AZsy/acm-FamShr, kid-pro-Kuo-Pods/ATem3F3k-FamShr, kid-pro-Kuo-Pad/AbOBhe4f-FamShr, kid-pro-Kuo-Pods Pro/AdvpQhYm-FamShr, kid-pro-Kuo-Phone-14/AbKkkSSg-FamShr, kid-pro-Kuo-MBP14/AZeaSwgF-FamShr, Alex's AirPods/Aa3Xog2a-FamShr, Sebastien's AirPods/AUqk0t+l-FamShr, kid-pro-Kuo-MBP14/AfpGAhgM-FamShr, kid-pro-Kuo-Phone-12/AZIo2j2t-FamShr, Alex's AirPods/AW/4T9tZ-FamShr, Sebastien's AirPods #2/AcdC+ZA5-FamShr, AirPods/AVa0Q0hN-FamShr
+06-06 16:19:17 [start_ic3...:0609] STAGE4   Checking Mobile App Integration > Loaded, Devices-kid-pro-Kuo-Phone-14
+06-06 16:19:17 [start_ic3...:2271] STAGE4   Mobile App Devices > 1 of 1 used by iCloud3
+                                                ✓kid-pro-Kuo-Phone-14, kid_pro_kuo_phone_14 (Watch5,4) >
+                                                     ◦kid_pro_kuo_phone14, Sebastien
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   Gb.PyiCloud.device_id_by_famshr_fname={'kid-pro-Ku': 'AZIo2j2tjxhJs/fgXJ7ZesRVx9nrYMIdFApk87Te9TYWpmkfcXCzENWsPIEXqPnrqoKvBXhR78FV2CmffNxij/Or/dV7GUmZF+qiZ3x2bYkoDXcAw3fqxu056GKmlajhynBq4CWYll+NHgsbR6FvuVQaMRGCsIdmOZMeVAk/6eZUWKf7l8+GVo0=', "Z's MacBoo": 'ATOg5tGiPYkrRqvqwgd7aXkev01hENOi9cEXB/BDSkAcQzx28GIu+Dd39XO0uCX+ixCqP3QkT6eyyW/4I3KaHeT/gJoh', "Alex's Air": 'AW/4T9tZ73v1Y57xSiYjydP+xUzWXwUIkddaMMKnaane6q/Hm7QQwxFfAv3tWZjLavpzEJUb7mkmMiMhpWGKzuaQid6wBxbldsaoZYqqYZWURFt2r/6OQlA+lj/1lZBeu3FyU63dbXBKxZ/jESom0h4ryD3qfteXg5JV9QIIZTuAyGqlhQaHQXmVKNFfkNhnBYP8U9x+1AWAJ3mcfCgQ3JO/KHX/bZiUkF4UcHAAPpvUchcubzpqMGDzbICj', "Sebastien'": 'AcdC+ZA5CxtmwoCsacC6jpiBHpsFOF4Mq4HXEbfH2kI9b12vKZepkYQmmJTXIJG095Prm/XgAgTZqM5UhwlZlxJy5e+SJySpPsWngl/nVsR2Xt9cj77xgaHZ1CAF5fDhStZEgn6ZFu4CEGY0OdnXphpw6Wm+glf95Ewu7M6zCUODjy6lps75nAWRckO2+s64fYmt4RWR3ElmdW2haHYB5AG0T13z5vpJql9rNR9zrArICnNARp2guS1lBpeK', 'AirPods': 'AVa0Q0hNkzieWDNXPsLc/Z12MbL7qtRkMfx/TCJXfZOvFwgMPwTytvCwZ4aSwz3wPHI46JxbBzrkBxXV3WuDeIjG97e+Lqt5axShOZ6JT9FtcBy/uc7T+HgO+zD8P8FuINkT8G+C/xW3EctjavUp0eOWJdOwO6uOnMix029sqordi6+R+lUsW7Tf+A8nfT7xnjgwZv9snx+xpSIbL5sL6ju1VeCydwKI+aJPv+8hR9NoyYT63GIs+9ZRYWgH'}
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   _.famshr_fnames_base=['kid-pro-Kuo-Phone-14', 'kid-pro-Kuo-AirPods', "Z's MacBook Pro", 'kid-pro-Kuo-Watch', 'kid-pro-Kuo-Pods', 'kid-pro-Kuo-Pad', 'kid-pro-Kuo-Pods Pro', 'kid-pro-Kuo-Phone-14', 'kid-pro-Kuo-MBP14', "Alex's AirPods", "Sebastien's AirPods", 'kid-pro-Kuo-MBP14', 'kid-pro-Kuo-Phone-12', "Alex's AirPods", "Sebastien's AirPods #2", 'AirPods']
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   _.famshr_fnames_count={'kid-pro-Kuo-Phone-14': 2, 'kid-pro-Kuo-AirPods': 1, "Z's MacBook Pro": 1, 'kid-pro-Kuo-Watch': 1, 'kid-pro-Kuo-Pods': 1, 'kid-pro-Kuo-Pad': 1, 'kid-pro-Kuo-Pods Pro': 1, 'kid-pro-Kuo-MBP14': 2, "Alex's AirPods": 2, "Sebastien's AirPods": 1, 'kid-pro-Kuo-Phone-12': 1, "Sebastien's AirPods #2": 1, 'AirPods': 1}
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   _.famshr_fnames_dupes=['kid-pro-Kuo-Phone-14', 'kid-pro-Kuo-MBP14', "Alex's AirPods"]
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   Gb.mobile_app_device_fnames=['kid-pro-Kuo-Phone-14']
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   Gb.mobapp_fnames_x_mobapp_id={'9a166549f91d5b46d6d4c5d07fb555a2': 'kid-pro-Kuo-Phone-14', 'kid-pro-Kuo-Phone-14': '9a166549f91d5b46d6d4c5d07fb555a2', None: '9a166549f91d5b46d6d4c5d07fb555a2'}
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   Gb.mobapp_fnames_disabled=[]
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   _.mobapp_id_by_mobapp_devicename={'kid_pro_kuo_phone_14': '9a166549f91d5b46d6d4c5d07fb555a2'}
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   _.mobapp_devicename_by_mobapp_id={'9a166549f91d5b46d6d4c5d07fb555a2': 'kid_pro_kuo_phone_14'}
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   _.last_updt_trig_by_mobapp_devicename={'kid_pro_kuo_phone_14': 'kid_pro_kuo_phone_14_last_update_trigger_2'}
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   _.battery_level_sensors_by_mobapp_devicename={'kid_pro_kuo_phone_14': 'kid_pro_kuo_phone_14_battery_level_2'}
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   _.battery_state_sensors_by_mobapp_devicename={'kid_pro_kuo_phone_14': 'kid_pro_kuo_phone_14_battery_state_2'}
+06-06 16:19:17 [start_ic3_co:0238] STAGE4   _.matched_mobapp_devices=['kid_pro_kuo_phone_14']
+06-06 16:19:17 [start_ic3_co:0287] STAGE5 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 5 > DEVICE CONFIGURATION SUMMARY
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:17 [start_ic3_co:0290] STAGE5   PyiCloud Instance Finialized > startup
+06-06 16:19:17 [start_ic3...:2642] STAGE5   Tracked Device > kid_pro_kuo_phone14 (Sebastien/iPhone)
+                                                • iCloud Tracking Parameters:
+                                                    ◦ FamShr Device: kid-pro-Kuo-Watch
+                                                • Mobile App Tracking Parameters:
+                                                    ◦ Device Tracker: device_tracker.kid_pro_kuo_phone_14
+                                                    ◦ Action Trigger.: kid_pro_kuo_phone_14_last_update_trigger_2
+                                                    ◦ Battery Sensor: kid_pro_kuo_phone_14_battery_level_2
+                                                    ◦ Notifications...: WAITING FOR NOTIFY SVC TO START"
+                                                • Other Parameters:
+                                                    ◦ inZone Interval: 2 hrs
+                                                    ◦ Log Zone Activity: Home → (Zone-Device.csv)
+                                                    ◦ Track from Zones: ≤Work-Passive≥, Home
+06-06 16:19:17 [start_ic3_co:0307] STAGE5   Gb.Devices_by_devicename_tracked={'kid_pro_kuo_phone14': <Device: kid_pro_kuo_phone14>}
+06-06 16:19:17 [start_ic3_co:0307] STAGE5   Gb.Devices_by_devicename_monitored={}
+06-06 16:19:17 [start_ic3_co:0307] STAGE5   _.inactive_devices=[]
+06-06 16:19:17 [start_ic3_co:0317] STAGE6 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    ICLOUD3 INITIALIZATION COMPLETE
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:17 [start_ic3...:2676] STAGE6   StatZones-None
+06-06 16:19:17 [start_ic3...:2679] STAGE6   Devices-kid_pro_kuo_phone14
+06-06 16:19:17 [start_ic3...:2684] STAGE6   Device-kid_pro_kuo_phone14, FromZones-home
+06-06 16:19:17 [start_ic3...:2687] STAGE6   Zones-not_home, Not_Home, not_set, Not_Set, ──, NotSet, stationary, Stationary, unknown, home, work
+06-06 16:19:17 [start_ic3_co:0377] 1stLOC   Requesting Initial Locate
+06-06 16:19:17 [start_ic3_co:0379] 1stLOC ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    ICLOUD3 V3.0.5.1 > START UP COMPLETE
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:17 [start_ic3_co:0394] 1stLOC   kid_pro_kuo_phone14 > FamShr Trigger > Initial Locate@4:18:41p
+06-06 16:19:17 [icloud3_main:0912] 1stLOC ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇   KID_PRO_KUO_PHONE14, ICLOUD, CURRZONE-NOT_SET, TRIGGER > INITIAL LOCATE 
+                                          ⡇⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂
+06-06 16:19:17 [icloud_data_:0433] LOCATE ⡇ kid_pro_kuo_phone14 > Located > FamShr-4:18:41p (36 secs ago), MobApp-00:00:00a
+06-06 16:19:17 [zone_handler:0256] 1stLOC ⡇ kid_pro_kuo_phone14 > Zone Distance >
+06-06 16:19:17 [zone_handler:0271] 1stLOC ⡇ kid_pro_kuo_phone14 > Zone > Home(1)-132.6ft > GPS-(33.78284, -84.38707/±44m)
+06-06 16:19:17 [determine_in:0161] 1stLOC ⡇ kid_pro_kuo_phone14 > DistFmZome-0.0, Moved-0.0, Waze-0.0, Calc-0.040419, TravTime-0, Dir-inHomeZone, DirHist-
+06-06 16:19:17 [determine_in:0447] 1stLOC ⡇ kid_pro_kuo_phone14 > DirHist-H
+06-06 16:19:17 [determine_in:0588] 1stLOC ⡇ kid_pro_kuo_phone14 > Results > NextUpdate-6:19:15p, Moved-0.0mi , Battery-100%, ×Went3km, Method-1.EnterZone
+06-06 16:19:17 [determine_in:0609] 1stLOC ⡇ kid_pro_kuo_phone14 > RESULTS: From-Home > MobApp-not_set, iC3-home, Intrvl-2 hrs, TravTime-0 min, Dist-0.0km, MaxDist-0.0km, Moved-0.0km, Calc/WazeDist=0.02511515/0.0, Dir-inHomeZone, Batt-100%, NextUpdt-6:19:15p, LastUpdt-4:19:17p, GPSAccur-44m, LocAge-36 secs ago, OldThresh-2 mins, LastEvLogMsg-4:19:17p, Method-1.EnterZone
+06-06 16:19:17 [icloud3_main:1025] 1stLOC ⡇ kid_pro_kuo_phone14 > FamShr Results > Next Update: 6:19:15p
+06-06 16:19:17 [icloud3_main:1027] 1stLOC ⡇⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂
+                                          ⡇   KID_PRO_KUO_PHONE14, FAMSHR, CURRZONE-HOME,  
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:17 [icloud3_main:1301] 1stLOC   kid_pro_kuo_phone14 > Device Monitor > FamShr, Trigger > Initial Locate, AttrsZone-home, LocDataZone-home, Located-4:18:41p (36 secs ago), MobAppGPS-(0.00000, 0.00000), MobAppState-not_set), GPS-(33.78284, -84.38707/±44m)
+06-06 16:19:17 [zone_handler:0401] 1stLOC   kid_pro_kuo_phone14 > Log Zone Activity > Logging Started-Home
+06-06 16:19:17 [device......:1988] 1stLOC   kid_pro_kuo_phone14 > Battery Info > Level-100%, Charged (FamShr)
+06-06 16:19:20 [config_flow.:4292] CONFIG   Show Form-menu_0, Errors-{}
+06-06 16:19:20 [start_ic3...:0142] CONFIG   Configuration Loading > Type-Restart, Tracking
+06-06 16:19:20 [start_ic3_co:0042] STAGE1 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 1 > INITIAL PREPARATIONS
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:20 [start_ic3_co:0066] STAGE1 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    ICLOUD3 V3.0.5.1 > RESTARTING, THURSDAY, JUN 06
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:20  
+                                           ⛔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                           ⛔    iCloud3 v3.0.5.1, Thursday, 2024-06-06 16:19:20
+                                           ⛔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:20 [start_ic3_co:0070] _INIT_   Profile:
+                                           {'version': 1, 'ic3_version': '3.0.5.1', 'version_install_date': '2024-06-06 16:15:33', 'config_update_date': '2024-06-06 16:19:20', 'event_log_version': '3.0.17', 'event_log_version_running': '', 'event_log_card_directory': 'www/icloud3', 'event_log_card_program': 'icloud3-event-log-card.js', 'event_log_btnconfig_url': '', 'picture_www_dirs': []}
+06-06 16:19:20 [start_ic3_co:0070] _INIT_   Tracking:
+                                           {'username': 'se...........@gm.......', 'password': 'iF..........', 'encode_password': True, 'icloud_server_endpoint_suffix': 'None', 'setup_icloud_session_early': True, 'data_source': 'famshr, mobapp', 'devices': '1'}
+06-06 16:19:20 [start_ic3_co:0070] _INIT_   General Configuration:
+                                           {'log_level': 'debug-auto-reset', 'log_level_devices': ['all'], 'unit_of_measurement': 'mi', 'time_format': '12-hour', 'display_zone_format': 'fname', 'device_tracker_state_source': 'ic3_fname', 'max_interval': 240, 'offline_interval': 20, 'exit_zone_interval': 3, 'mobapp_alive_interval': 60, 'old_location_threshold': 3, 'old_location_adjustment': 0, 'gps_accuracy_threshold': 100, 'display_gps_lat_long': True, 'travel_time_factor': 0.5, 'tfz_tracking_max_distance': 8, 'passthru_zone_time': 0.5, 'track_from_base_zone_used': True, 'track_from_base_zone': 'home', 'track_from_home_zone': True, 'center_in_zone': False, 'discard_poor_gps_inzone': False, 'distance_between_devices': True, 'inzone_intervals': {'iphone': 120, 'ipad': 120, 'watch': 15, 'airpods': 15, 'no_mobapp': 15, 'other': 120}, 'waze_used': True, 'waze_region': 'us', 'waze_min_distance': 1, 'waze_max_distance': 1000, 'waze_realtime': False, 'waze_history_database_used': True, 'waze_history_max_distance': 20, 'waze_history_track_direction': 'north_south', 'stat_zone_fname': 'StatZon#', 'stat_zone_still_time': 8, 'stat_zone_inzone_interval': 30, 'stat_zone_base_latitude': 1, 'stat_zone_base_longitude': 0, 'display_text_as': ['#1', '#2', '#3', '#4', '#5', '#6', '#7', '#8', '#9', '#10'], 'away_time_zone_1_offset': 0, 'away_time_zone_1_devices': ['none'], 'away_time_zone_2_offset': 0, 'away_time_zone_2_devices': ['none']}
+                                           {'country_code': 'US', 'region_code': 'GA', 'zip_code': '30308', 'region_name': 'Georgia', 'city': 'Atlanta', 'time_zone': 'America/New_York', 'latitude': 33.7697, 'longitude': -84.3754, 'use_metric': False}
+06-06 16:19:20 [start_ic3_co:0070] _INIT_   
+06-06 16:19:20 [start_ic3_co:0070] _INIT_   Sebastien, kid_pro_kuo_phone14:
+                                           {'ic3_devicename': 'kid_pro_kuo_phone14', 'fname': 'Sebastien', 'picture': 'None', 'evlog_display_order': 0, 'unique_id': '', 'device_type': 'iphone', 'inzone_interval': 120.0, 'fixed_interval': 0.0, 'tracking_mode': 'track', 'famshr_devicename': 'kid-pro-Kuo-Watch', 'famshr_device_id': 'AZsy/acm1QXkPNmUEHXE7G63gp9g0lpyDVxtz6aRtK80y7HyV3Pzv98XJBJ/MutNF/jq7Elaggu23g==', 'raw_model': 'Watch5,4', 'model': 'Apple Watch', 'model_display_name': 'Apple Watch 5', 'fmf_email': 'None', 'fmf_device_id': '', 'mobile_app_device': 'Search: kid_pro_kuo_phone_14', 'track_from_base_zone': 'home', 'track_from_zones': ['work', 'home'], 'log_zones': ['home', 'name-zone-device'], 'old_devicename': 'sebastien_iphone14'}
+06-06 16:19:20 [start_ic3_co:0070] _INIT_   
+06-06 16:19:20 [waze........:0073] _INIT_   Set Up Waze > Server-United States, Canada (US), CountryCode-US, MinDist-1km, MaxDist-1000km, Realtime-False, HistoryDatabaseUsed-True
+06-06 16:19:20 [waze_history:0180] _INIT_   kid_pro_kuo_phone14 > Waze History Database > /config/.storage/icloud3/waze_location_history.db
+06-06 16:19:20 [start_ic3...:0470] _INIT_   Configure iCloud3 Operations >
+                                                • Load configuration parameters
+                                                • Set Display Text As Fields (0 used)
+                                                • Set Default Tracking Method (iCloud)
+                                                • Initialize Debug Control (debug-auto-reset)
+                                                • Set Unit of Measure Formats (mi)
+                                                • Set Event Log Record Limits (5500 Events)
+                                                • Device Tracker State Value Source 
+                                                 (iCloud3 Zone Friendly Name)
+06-06 16:19:20 [start_ic3_co:0078] _INIT_   iCloud3 Directory > /config/custom_components/icloud3
+06-06 16:19:20 [start_ic3_co:0082] _INIT_   iCloud3 Configuration File > /config/.storage/icloud3/configuration
+06-06 16:19:20 [start_ic3...:0893] _INIT_   iCloud3 Event Log > 
+                                                • Current Version Installed-v3.0.17
+                                                • File-/config/www/icloud3/icloud3-event-log-card.js
+06-06 16:19:20 [start_ic3_co:0089] _INIT_   LocationInfo-{'country_code': 'US', 'region_code': 'GA', 'zip_code': '30308', 'region_name': 'Georgia', 'city': 'Atlanta', 'time_zone': 'America/New_York', 'latitude': 33.7697, 'longitude': -84.3754, 'use_metric': False}
+06-06 16:19:20 [time_util...:0412] _INIT_   Local Time Zone Offset > UTC-04:00 hrs, EDT, Country Code-US
+06-06 16:19:20 [start_ic3_co:0105] STAGE2 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 2 > PREPARE SUPPORT SERVICES
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:20 [start_ic3...:1111] STAGE2   Set up Zones > zone, Display (fname)
+                                                • home, Home (r100m/328.1ft)
+06-06 16:19:20 [start_ic3...:1132] STAGE2   Special Zone Setup >
+                                                • Enter Zone Delay > DelayTime-30 secs
+                                                • Stationary Zone > Radius-100m, DistMoveLimit-125m, MinDistFromAnotherZone-200m
+06-06 16:19:20 [waze........:0073] STAGE2   Set Up Waze > Server-United States, Canada (US), CountryCode-US, MinDist-1km, MaxDist-1000km, Realtime-False, HistoryDatabaseUsed-True
+06-06 16:19:20 [waze_history:0180] STAGE2   kid_pro_kuo_phone14 > Waze History Database > /config/.storage/icloud3/waze_location_history.db
+06-06 16:19:20 [waze_history:0327] STAGE2   kid_pro_kuo_phone14 > WazeHistDB > Get Record, Table-zones, Criteria-entity_id='zone.work', Zone-1 (work)
+06-06 16:19:20 [waze_history:0357] STAGE2   kid_pro_kuo_phone14 > WazeHistDB > Get All Records, Table-locations, Criteria-zone_id='1', RecdCnt-0
+06-06 16:19:20 [waze_history:0327] STAGE2   kid_pro_kuo_phone14 > WazeHistDB > Get Record, Table-zones, Criteria-entity_id='zone.home', Zone-2 (home)
+06-06 16:19:20 [waze_history:0357] STAGE2   kid_pro_kuo_phone14 > WazeHistDB > Get All Records, Table-locations, Criteria-zone_id='2', RecdCnt-0
+06-06 16:19:20 [start_ic3_co:0150] STAGE2   Gb.Zones=[<Zone: not_home>, <Zone: Not_Home>, <Zone: not_set>, <Zone: Not_Set>, <Zone: ──>, <Zone: NotSet>, <Zone: stationary>, <Zone: Stationary>, <Zone: unknown>, <Zone: home>, <Zone: work>]
+06-06 16:19:20 [start_ic3_co:0157] STAGE3 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 3 > PREPARE CONFIGURED DEVICES
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:20 [start_ic3_co:0169] STAGE3   Data Sources > FamShr, MobApp
+06-06 16:19:20 [device......:0653] STAGE3   ADDED DeviceFmZone > kid_pro_kuo_phone14:home
+06-06 16:19:20 [start_ic3...:1254] STAGE3   INITIALIZED Device > Sebastien (kid_pro_kuo_phone14)
+06-06 16:19:20 [start_ic3...:1278] STAGE3   ✓ kid_pro_kuo_phone14 > Sebastien/iPhone (Tracked)
+                                                •FamShr Device: kid-pro-Kuo-Watch
+                                                •MobApp Entity: Search: kid_pro_kuo_phone_14
+                                                •Track from Zones: ≤work-Passive≥, home
+06-06 16:19:20 [start_ic3_co:0187] STAGE3   Gb.Devices=[<Device: kid_pro_kuo_phone14>]
+06-06 16:19:20 [start_ic3_co:0187] STAGE3   Gb.DevDevices_by_devicename={'kid_pro_kuo_phone14': <Device: kid_pro_kuo_phone14>}
+06-06 16:19:20 [start_ic3_co:0187] STAGE3   Gb.conf_devicenames=['kid_pro_kuo_phone14']
+06-06 16:19:20 [start_ic3_co:0187] STAGE3   Gb.conf_famshr_devicenames=['kid-pro-Kuo-Watch']
+06-06 16:19:20 [start_ic3_co:0197] STAGE4 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 4 > SETUP ICLOUD & MOBAPP DATA SOURCE
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:20 [start_ic3_co:0216] STAGE4   iCloud Account > Logged Into-se...........@gm.......
+06-06 16:19:20 [pyicloud_ic3:0099] STAGE4 ❗PyiCloud Instance Selected > startup
+06-06 16:19:20 [start_ic3...:1392] STAGE4   iCloud Location Service interface > Selected (startup)
+06-06 16:19:20 [start_ic3...:1756] 🛑       DUPLICATE FAMSHR DEVICES > There are several devices in the iCloud Account Family Sharing list with the same or similar names. The unused devices should be reviewed and removed. The Devices are:,  • kid-pro-Kuo-Phone-14,      ◦ kid-pro-Kuo-Phone-14 > Located-Never (iPhone15,3),      ◦ kid-pro-Kuo-Phone-14(2) > Located-39 secs ago (iPhone15,3),      ◦ Last Located > kid-pro-Kuo-Phone-14(2),  • kid-pro-Kuo-MBP14,      ◦ kid-pro-Kuo-MBP14 > Located-3 mins ago (MacBookPro18,3),      ◦ kid-pro-Kuo-MBP14(2) > Located-Never (MacBookPro18,3),      ◦ Last Located > kid-pro-Kuo-MBP14,  • Alex's AirPods,      ◦ Alex's AirPods > Located-15.8 hrs ago (AirPods_8207),      ◦ Alex's AirPods(2) > Located-Never (AirPods_8207),      ◦ Last Located > Alex's AirPods
+06-06 16:19:20 [start_ic3...:1588] STAGE4   iCloud Acct Family Sharing Devices > 1 of 16 used by iCloud3
+                                                × AirPods (AirPods; AirPods8207) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × Alex's AirPods (AirPods; AirPods8207) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × Alex's AirPods(2) (AirPods; AirPods8207) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × Sebastien's AirPods (AirPods; AirPods8207) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × Sebastien's AirPods #2 (AirPods; AirPods8207) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × Z's MacBook Pro (MacBook Pro 15"; MacBookPro11,2) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-AirPods (AirPods; AirPods8211) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-MBP14 (MacBook Pro 14"; MacBookPro18,3) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-MBP14(2) (MacBook Pro 14"; MacBookPro18,3) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-Pad (iPad Pro; iPad8,7) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-Phone-12 (iPhone 12 Pro Max; iPhone13,4) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-Phone-14 (iPhone 14 Pro Max; iPhone15,3) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-Phone-14(2) (iPhone 14 Pro Max; iPhone15,3) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-Pods (AirPods; AirPods8207) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                × kid-pro-Kuo-Pods Pro (AirPods Pro; AirPods8212) >
+                                                     ◦Not Assigned to an iCloud3 Device
+                                                ✓kid-pro-Kuo-Watch (Apple Watch 5; Watch5,4) >
+                                                     ◦kid_pro_kuo_phone14, Sebastien
+06-06 16:19:20 [start_ic3...:2019] STAGE4   Set PyiCloud Device Id > kid_pro_kuo_phone14, DataSource-famshr, , FamShr-(#AZsy/acm)
+06-06 16:19:20 [start_ic3...:2027] STAGE4   PyiCloud Devices > kid-pro-Kuo-Phone-14/AY25cfV/-FamShr, kid-pro-Kuo-AirPods/AS+SJnPk-FamShr, Z's MacBook Pro/ATOg5tGi-FamShr, kid-pro-Kuo-Watch/AZsy/acm-FamShr, kid-pro-Kuo-Pods/ATem3F3k-FamShr, kid-pro-Kuo-Pad/AbOBhe4f-FamShr, kid-pro-Kuo-Pods Pro/AdvpQhYm-FamShr, kid-pro-Kuo-Phone-14/AbKkkSSg-FamShr, kid-pro-Kuo-MBP14/AZeaSwgF-FamShr, Alex's AirPods/Aa3Xog2a-FamShr, Sebastien's AirPods/AUqk0t+l-FamShr, kid-pro-Kuo-MBP14/AfpGAhgM-FamShr, kid-pro-Kuo-Phone-12/AZIo2j2t-FamShr, Alex's AirPods/AW/4T9tZ-FamShr, Sebastien's AirPods #2/AcdC+ZA5-FamShr, AirPods/AVa0Q0hN-FamShr
+06-06 16:19:20 [start_ic3...:0609] STAGE4   Checking Mobile App Integration > Loaded, Devices-kid-pro-Kuo-Phone-14
+06-06 16:19:20 [start_ic3...:2271] STAGE4   Mobile App Devices > 1 of 1 used by iCloud3
+                                                ✓kid-pro-Kuo-Phone-14, kid_pro_kuo_phone_14 (Watch5,4) >
+                                                     ◦kid_pro_kuo_phone14, Sebastien
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   Gb.PyiCloud.device_id_by_famshr_fname={'kid-pro-Ku': 'AZIo2j2tjxhJs/fgXJ7ZesRVx9nrYMIdFApk87Te9TYWpmkfcXCzENWsPIEXqPnrqoKvBXhR78FV2CmffNxij/Or/dV7GUmZF+qiZ3x2bYkoDXcAw3fqxu056GKmlajhynBq4CWYll+NHgsbR6FvuVQaMRGCsIdmOZMeVAk/6eZUWKf7l8+GVo0=', "Z's MacBoo": 'ATOg5tGiPYkrRqvqwgd7aXkev01hENOi9cEXB/BDSkAcQzx28GIu+Dd39XO0uCX+ixCqP3QkT6eyyW/4I3KaHeT/gJoh', "Alex's Air": 'AW/4T9tZ73v1Y57xSiYjydP+xUzWXwUIkddaMMKnaane6q/Hm7QQwxFfAv3tWZjLavpzEJUb7mkmMiMhpWGKzuaQid6wBxbldsaoZYqqYZWURFt2r/6OQlA+lj/1lZBeu3FyU63dbXBKxZ/jESom0h4ryD3qfteXg5JV9QIIZTuAyGqlhQaHQXmVKNFfkNhnBYP8U9x+1AWAJ3mcfCgQ3JO/KHX/bZiUkF4UcHAAPpvUchcubzpqMGDzbICj', "Sebastien'": 'AcdC+ZA5CxtmwoCsacC6jpiBHpsFOF4Mq4HXEbfH2kI9b12vKZepkYQmmJTXIJG095Prm/XgAgTZqM5UhwlZlxJy5e+SJySpPsWngl/nVsR2Xt9cj77xgaHZ1CAF5fDhStZEgn6ZFu4CEGY0OdnXphpw6Wm+glf95Ewu7M6zCUODjy6lps75nAWRckO2+s64fYmt4RWR3ElmdW2haHYB5AG0T13z5vpJql9rNR9zrArICnNARp2guS1lBpeK', 'AirPods': 'AVa0Q0hNkzieWDNXPsLc/Z12MbL7qtRkMfx/TCJXfZOvFwgMPwTytvCwZ4aSwz3wPHI46JxbBzrkBxXV3WuDeIjG97e+Lqt5axShOZ6JT9FtcBy/uc7T+HgO+zD8P8FuINkT8G+C/xW3EctjavUp0eOWJdOwO6uOnMix029sqordi6+R+lUsW7Tf+A8nfT7xnjgwZv9snx+xpSIbL5sL6ju1VeCydwKI+aJPv+8hR9NoyYT63GIs+9ZRYWgH'}
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   _.famshr_fnames_base=['kid-pro-Kuo-Phone-14', 'kid-pro-Kuo-AirPods', "Z's MacBook Pro", 'kid-pro-Kuo-Watch', 'kid-pro-Kuo-Pods', 'kid-pro-Kuo-Pad', 'kid-pro-Kuo-Pods Pro', 'kid-pro-Kuo-Phone-14', 'kid-pro-Kuo-MBP14', "Alex's AirPods", "Sebastien's AirPods", 'kid-pro-Kuo-MBP14', 'kid-pro-Kuo-Phone-12', "Alex's AirPods", "Sebastien's AirPods #2", 'AirPods']
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   _.famshr_fnames_count={'kid-pro-Kuo-Phone-14': 2, 'kid-pro-Kuo-AirPods': 1, "Z's MacBook Pro": 1, 'kid-pro-Kuo-Watch': 1, 'kid-pro-Kuo-Pods': 1, 'kid-pro-Kuo-Pad': 1, 'kid-pro-Kuo-Pods Pro': 1, 'kid-pro-Kuo-MBP14': 2, "Alex's AirPods": 2, "Sebastien's AirPods": 1, 'kid-pro-Kuo-Phone-12': 1, "Sebastien's AirPods #2": 1, 'AirPods': 1}
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   _.famshr_fnames_dupes=['kid-pro-Kuo-Phone-14', 'kid-pro-Kuo-MBP14', "Alex's AirPods"]
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   Gb.mobile_app_device_fnames=['kid-pro-Kuo-Phone-14']
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   Gb.mobapp_fnames_x_mobapp_id={'9a166549f91d5b46d6d4c5d07fb555a2': 'kid-pro-Kuo-Phone-14', 'kid-pro-Kuo-Phone-14': '9a166549f91d5b46d6d4c5d07fb555a2', None: '9a166549f91d5b46d6d4c5d07fb555a2'}
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   Gb.mobapp_fnames_disabled=[]
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   _.mobapp_id_by_mobapp_devicename={'kid_pro_kuo_phone_14': '9a166549f91d5b46d6d4c5d07fb555a2'}
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   _.mobapp_devicename_by_mobapp_id={'9a166549f91d5b46d6d4c5d07fb555a2': 'kid_pro_kuo_phone_14'}
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   _.last_updt_trig_by_mobapp_devicename={'kid_pro_kuo_phone_14': 'kid_pro_kuo_phone_14_last_update_trigger_2'}
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   _.battery_level_sensors_by_mobapp_devicename={'kid_pro_kuo_phone_14': 'kid_pro_kuo_phone_14_battery_level_2'}
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   _.battery_state_sensors_by_mobapp_devicename={'kid_pro_kuo_phone_14': 'kid_pro_kuo_phone_14_battery_state_2'}
+06-06 16:19:20 [start_ic3_co:0238] STAGE4   _.matched_mobapp_devices=['kid_pro_kuo_phone_14']
+06-06 16:19:20 [start_ic3_co:0287] STAGE5 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    STAGE 5 > DEVICE CONFIGURATION SUMMARY
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:20 [start_ic3_co:0290] STAGE5   PyiCloud Instance Finialized > startup
+06-06 16:19:20 [start_ic3...:2642] STAGE5   Tracked Device > kid_pro_kuo_phone14 (Sebastien/iPhone)
+                                                • iCloud Tracking Parameters:
+                                                    ◦ FamShr Device: kid-pro-Kuo-Watch
+                                                • Mobile App Tracking Parameters:
+                                                    ◦ Device Tracker: device_tracker.kid_pro_kuo_phone_14
+                                                    ◦ Action Trigger.: kid_pro_kuo_phone_14_last_update_trigger_2
+                                                    ◦ Battery Sensor: kid_pro_kuo_phone_14_battery_level_2
+                                                    ◦ Notifications...: WAITING FOR NOTIFY SVC TO START"
+                                                • Other Parameters:
+                                                    ◦ inZone Interval: 2 hrs
+                                                    ◦ Log Zone Activity: Home → (Zone-Device.csv)
+                                                    ◦ Track from Zones: ≤Work-Passive≥, Home
+06-06 16:19:20 [start_ic3_co:0307] STAGE5   Gb.Devices_by_devicename_tracked={'kid_pro_kuo_phone14': <Device: kid_pro_kuo_phone14>}
+06-06 16:19:20 [start_ic3_co:0307] STAGE5   Gb.Devices_by_devicename_monitored={}
+06-06 16:19:20 [start_ic3_co:0307] STAGE5   _.inactive_devices=[]
+06-06 16:19:20 [start_ic3_co:0317] STAGE6 ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    ICLOUD3 INITIALIZATION COMPLETE
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:20 [start_ic3...:2676] STAGE6   StatZones-None
+06-06 16:19:20 [start_ic3...:2679] STAGE6   Devices-kid_pro_kuo_phone14
+06-06 16:19:20 [start_ic3...:2684] STAGE6   Device-kid_pro_kuo_phone14, FromZones-home
+06-06 16:19:20 [start_ic3...:2687] STAGE6   Zones-not_home, Not_Home, not_set, Not_Set, ──, NotSet, stationary, Stationary, unknown, home, work
+06-06 16:19:20 [start_ic3_co:0377] 1stLOC   Requesting Initial Locate
+06-06 16:19:20 [start_ic3_co:0379] 1stLOC ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇    ICLOUD3 V3.0.5.1 > START UP COMPLETE
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:20 [start_ic3_co:0394] 1stLOC   kid_pro_kuo_phone14 > FamShr Trigger > Initial Locate@4:18:41p
+06-06 16:19:20 [icloud3_main:0912] 1stLOC ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                          ⡇   KID_PRO_KUO_PHONE14, ICLOUD, CURRZONE-HOME, TRIGGER > INITIAL LOCATE 
+                                          ⡇⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂
+06-06 16:19:20 [icloud_data_:0433] LOCATE ⡇ kid_pro_kuo_phone14 > Located > FamShr-4:18:41p (39 secs ago), MobApp-00:00:00a
+06-06 16:19:20 [zone_handler:0256] 1stLOC ⡇ kid_pro_kuo_phone14 > Zone Distance >
+06-06 16:19:20 [zone_handler:0271] 1stLOC ⡇ kid_pro_kuo_phone14 > Zone > Home(1)-132.6ft > GPS-(33.78284, -84.38707/±44m)
+06-06 16:19:20 [determine_in:0161] 1stLOC ⡇ kid_pro_kuo_phone14 > DistFmZome-0.0, Moved-0.0, Waze-0.0, Calc-0.040419, TravTime-0, Dir-inHomeZone, DirHist-
+06-06 16:19:20 [determine_in:0447] 1stLOC ⡇ kid_pro_kuo_phone14 > DirHist-H
+06-06 16:19:20 [determine_in:0588] 1stLOC ⡇ kid_pro_kuo_phone14 > Results > NextUpdate-6:19:20p, Moved-0.0mi , Battery-100%, ×Went3km, Method-3.AtHome
+06-06 16:19:20 [determine_in:0609] 1stLOC ⡇ kid_pro_kuo_phone14 > RESULTS: From-Home > MobApp-not_set, iC3-home, Intrvl-2 hrs, TravTime-0 min, Dist-0.0km, MaxDist-0.0km, Moved-0.0km, Calc/WazeDist=0.02511515/0.0, Dir-inHomeZone, Batt-100%, NextUpdt-6:19:20p, LastUpdt-4:19:20p, GPSAccur-44m, LocAge-39 secs ago, OldThresh-2 mins, LastEvLogMsg-4:19:20p, Method-3.AtHome
+06-06 16:19:20 [icloud3_main:1025] 1stLOC ⡇ kid_pro_kuo_phone14 > FamShr Results > Next Update: 6:19:20p
+06-06 16:19:20 [icloud3_main:1027] 1stLOC ⡇⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂
+                                          ⡇   KID_PRO_KUO_PHONE14, FAMSHR, CURRZONE-HOME,  
+                                          ⡇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06-06 16:19:20 [icloud3_main:1301] 1stLOC   kid_pro_kuo_phone14 > Device Monitor > FamShr, Trigger > Initial Locate, AttrsZone-home, LocDataZone-home, Located-4:18:41p (39 secs ago), MobAppGPS-(0.00000, 0.00000), MobAppState-not_set), GPS-(33.78284, -84.38707/±44m)
+06-06 16:19:20 [zone_handler:0401] 1stLOC   kid_pro_kuo_phone14 > Log Zone Activity > Logging Started-Home
+06-06 16:19:20 [device......:1988] 1stLOC   kid_pro_kuo_phone14 > Battery Info > Level-100%, Charged (FamShr)
