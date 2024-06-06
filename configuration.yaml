@@ -1,0 +1,23 @@
+# Example configuration.yaml entry
+default_config:
+
+# https://www.home-assistant.io/integrations/mobile_app/
+group: !include groups.yaml
+
+# https://www.home-assistant.io/integrations/automation/
+automation: !include automations.yaml
+
+# https://www.home-assistant.io/integrations/script/
+script: !include scripts.yaml
+
+# https://www.home-assistant.io/integrations/scene/
+scene: !include scenes.yaml
+
+# https://www.home-assistant.io/integrations/mobile_app/
+mobile_app:
+
+frontend:
+  extra_module_url:
+    - /hacsfiles/custom-sidebar/custom-sidebar.js
+  #themes: !include themes.yaml
+  themes: !include_dir_merge_named themes
